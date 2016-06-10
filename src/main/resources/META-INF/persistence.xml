@@ -2,7 +2,7 @@
 <persistence version="1.0"
 	xmlns="http://java.sun.com/xml/ns/persistence">
 	
-	<persistence-unit name="unidade">
+	<persistence-unit name="sgm-system">
 	
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		
