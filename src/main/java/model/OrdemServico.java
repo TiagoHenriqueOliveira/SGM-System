@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -25,7 +26,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name="TB_ORDEM_SERVICO")
-public @Data class OrdemServico {
+public @Data class OrdemServico implements Entidade {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,6 +44,9 @@ public @Data class OrdemServico {
 	
 	@ManyToOne(optional = true, fetch = FetchType.EAGER)
 	private Veiculo veiculo;
+	
+	@OneToOne(optional = true, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private Servico servico;
 	
 	@OneToMany(mappedBy = "OSVItemProduto", targetEntity = OSVItemProduto.class, fetch=FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<OSVItemProduto> itens = new ArrayList<OSVItemProduto>();

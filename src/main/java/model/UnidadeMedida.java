@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name="TB_UNIDDADE_MEDIDA")
-public @Data class UnidadeMedida {
+public @Data class UnidadeMedida implements Entidade {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
