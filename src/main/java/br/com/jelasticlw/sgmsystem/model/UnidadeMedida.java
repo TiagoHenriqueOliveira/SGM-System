@@ -1,4 +1,4 @@
-package model;
+package br.com.jelasticlw.sgmsystem.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,22 +14,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="TB_USUARIO")
-public @Data class Usuario implements Entidade {
+@Table(name="TB_UNIDDADE_MEDIDA")
+public @Data class UnidadeMedida implements Entidade {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	
-	@Column(nullable = false, length = 255)
-	private String nome;
+	@Column(nullable = false, length = 255, unique = true)
+	private String descricao;
 	
-	@Column(nullable = false, length = 20, unique = true)
-	private String login;
-	
-	@Column(nullable = false, length = 15)
-	private String senha;
-	
-	@Column(nullable = false)
-	private Boolean foraDeUso;
+	@Column(nullable = false, length = 255, unique = true)
+	private String abreviatura;
 }

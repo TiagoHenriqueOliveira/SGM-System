@@ -1,4 +1,4 @@
-package model;
+package br.com.jelasticlw.sgmsystem.model;
 
 public interface Entidade {
 	

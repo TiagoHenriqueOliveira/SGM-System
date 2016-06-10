@@ -1,4 +1,4 @@
-package model;
+package br.com.jelasticlw.sgmsystem.model;
 
 import java.util.ArrayList;
 import java.util.Date;

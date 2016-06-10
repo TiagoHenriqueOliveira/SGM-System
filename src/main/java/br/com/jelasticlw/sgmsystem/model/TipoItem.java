@@ -1,4 +1,4 @@
-package model;
+package br.com.jelasticlw.sgmsystem.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

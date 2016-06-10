@@ -1,7 +1,9 @@
-package model;
+package br.com.jelasticlw.sgmsystem.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,9 +16,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="TB_UNIDDADE_MEDIDA")
-public @Data class UnidadeMedida implements Entidade {
-
+@Table(name="TB_SERVICO")
+public @Data class Servico implements Entidade {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
@@ -24,6 +26,12 @@ public @Data class UnidadeMedida implements Entidade {
 	@Column(nullable = false, length = 255, unique = true)
 	private String descricao;
 	
-	@Column(nullable = false, length = 255, unique = true)
-	private String abreviatura;
+	@Column(nullable = false, precision = 10, scale = 2)
+	private Double valor;
+	
+	@Column(nullable = false)
+	private Boolean foraDeUso;
+	
+	@Enumerated(EnumType.STRING)
+	private TipoItem tipoItem;
 }

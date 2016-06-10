@@ -1,4 +1,4 @@
-package model;
+package br.com.jelasticlw.sgmsystem.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,8 +16,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="TB_VEICULO")
-public @Data class Veiculo implements Entidade {
+@Table(name="TB_CLIENTE")
+public @Data class Cliente implements Entidade {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +26,30 @@ public @Data class Veiculo implements Entidade {
 	@Column(nullable = false, length = 255)
 	private String nome;
 	
-	@Column(nullable = false, length = 7, unique = true)
-	private String placa;
+	@Column(nullable = false, length = 11, unique = true)
+	private String cpf;
+	
+	@Column(nullable = false, length = 255)
+	private String rua;
+	
+	@Column(nullable = false, length = 255)
+	private String bairro;
+	
+	@Column(nullable = false, length = 11)
+	private Integer numero;
+	
+	@Column(length = 10)
+	private String telCelular;
+	
+	@Column(length = 10)
+	private String telResidencial;
+	
+	@Column(nullable = false, length = 255, unique = true)
+	private String email;
 	
 	@Column(nullable = false)
 	private Boolean foraDeUso;
 	
 	@ManyToOne(optional = true, fetch = FetchType.EAGER)
-	private Cliente cliente;
+	private Cidade cidade;
 }
