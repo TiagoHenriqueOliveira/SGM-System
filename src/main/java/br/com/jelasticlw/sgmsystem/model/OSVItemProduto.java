@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 					+ "on tbItemProd.id_produto = tbProd.id_produto "
 					+ "where tbOSV.id_ordem_servico = ?")
 })
-public @Data class OSVItemProduto {
+public @Data class OSVItemProduto implements Entidade {
 	
 	public static final String PesquisaPorDescricao = "PesquisaPorDescricao";
 	public static final String ListarTodos = "ListarTodos";
@@ -43,4 +43,10 @@ public @Data class OSVItemProduto {
 	@ManyToOne(optional = true, targetEntity = Produto.class)
 	@Column(name = "id_produto")
 	private Produto produto;
+
+	@Override
+	public Long getCodigo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
