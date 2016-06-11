@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -15,10 +17,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name="TB_USUARIO")
+@NamedQueries({
+	@NamedQuery(name = Usuario.PesquisaPorDescricao,
+			query = "from tb_usuario tbUsu "
+					+ "where tbUsu.nome like ?")
+})
 public @Data class Usuario implements Entidade {
+	
+	public static final String PesquisaPorDescricao = "PesquisaPorDescricao";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_usuario")
 	private Long codigo;
 	
 	@Column(nullable = false, length = 255)
