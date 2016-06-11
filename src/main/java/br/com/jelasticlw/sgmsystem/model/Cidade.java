@@ -38,7 +38,7 @@ import lombok.NoArgsConstructor;
 })
 public @Data class Cidade implements Entidade {
 	
-	public static final String PesquisaPorDescricao = "PesquisaPorNome";
+	public static final String PesquisaPorDescricao = "PesquisaPorDescricao";
 	public static final String ListarTodos = "PesquisaTodos";
 	
 	@Id
