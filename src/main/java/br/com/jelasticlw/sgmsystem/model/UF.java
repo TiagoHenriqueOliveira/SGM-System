@@ -28,7 +28,7 @@ public @Data class UF implements Entidade {
 	private String nome;
 	
 	@ManyToOne(optional = true, fetch = FetchType.EAGER)
-	@Column(name = "codigo_pais")
+	@Column(name = "id_pais")
 	private Pais pais;
 
 }
