@@ -10,6 +10,6 @@ public interface GenericDAO<T extends Entidade> {
 	void excluir(T entidade);
 	T buscarPorCodigo(Class<T> classe, Long codigo);
 	List<T> buscarPorDescricao(Class<T> classe, String descricao);
-	List<T> buscarTodos(Class<T> classe);
+	List<T> listarTodos(Class<T> classe);
 	
 }
