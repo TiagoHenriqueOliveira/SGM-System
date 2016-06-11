@@ -20,11 +20,14 @@ import lombok.NoArgsConstructor;
 @NamedQueries({
 	@NamedQuery(name = Usuario.PesquisaPorDescricao,
 			query = "from tb_usuario tbUsu "
-					+ "where tbUsu.nome like ?")
+					+ "where tbUsu.nome like ?"),
+	@NamedQuery(name = Usuario.ListarTodos,
+			query = "from tb_usuario ")
 })
 public @Data class Usuario implements Entidade {
 	
 	public static final String PesquisaPorDescricao = "PesquisaPorDescricao";
+	public static final String ListarTodos = "ListarTodos";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
