@@ -19,8 +19,10 @@ public @Data class OSVItemProduto {
 	private Integer quantidade;
 	
 	@ManyToOne(optional = true, targetEntity = OrdemServico.class)
+	@Column(name = "id_ordem_servico")
 	private OrdemServico ordemServico;
 	
 	@ManyToOne(optional = true, targetEntity = Produto.class)
+	@Column(name = "id_produto")
 	private Produto produto;
 }
