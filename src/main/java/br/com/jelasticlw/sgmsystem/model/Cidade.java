@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -17,7 +19,27 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name="TB_CIDADE")
+@NamedQueries({
+	@NamedQuery(name = Cidade.PesquisaPorNome, 
+			query = "from tb_cidade tbCid "
+					+ "inner join tb_uf tbUF "
+					+ "on tbCid.codigo_uf = tbUF.codigo_uf "
+					+ "inner join tb_pais tbPais"
+					+ "on tbUF.codigo_pais = tbPais.codigo_pais "
+					+ "where tbCid.nome like ? "
+					+ "order by tbCid.nome"),
+	@NamedQuery(name = Cidade.PesquisaTodos,
+			query = "from tb_cidade tbCid "
+					+ "inner join tb_uf tbUF "
+					+ "on tbCid.codigo_uf = tbUF.codigo_uf "
+					+ "inner join tb_pais tbPais"
+					+ "on tbUF.codigo_pais = tbPais.codigo_pais "
+					+ "order by tbCid.nome")
+})
 public @Data class Cidade implements Entidade {
+	
+	public static final String PesquisaPorNome = "PesquisaPorNome";
+	public static final String PesquisaTodos = "PesquisaTodos";
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +48,7 @@ public @Data class Cidade implements Entidade {
 	@Column(nullable = false, length = 255)
 	private String nome;
 	
+	@Column(name = "codigo_uf")
 	@ManyToOne(optional = true, fetch = FetchType.EAGER)
 	private UF uf;
 	
