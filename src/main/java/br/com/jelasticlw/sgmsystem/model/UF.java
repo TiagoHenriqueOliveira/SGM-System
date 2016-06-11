@@ -21,12 +21,14 @@ public @Data class UF implements Entidade {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "codigo_uf")
 	private Long codigo;
 	
 	@Column(nullable = false, length = 255)
 	private String nome;
 	
 	@ManyToOne(optional = true, fetch = FetchType.EAGER)
+	@Column(name = "codigo_pais")
 	private Pais pais;
 
 }
