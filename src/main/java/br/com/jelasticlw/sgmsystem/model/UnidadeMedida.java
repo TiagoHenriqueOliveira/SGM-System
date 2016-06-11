@@ -20,9 +20,11 @@ import lombok.NoArgsConstructor;
 @NamedQueries({
 	@NamedQuery(name = UnidadeMedida.PesquisaPorDescricao,
 			query = "from tb_unidade_medida tbUnid "
-					+ "where tbUnid.nome like ?"),
+					+ "where tbUnid.nome like ? "
+					+ "order by tbUnid.nome"),
 	@NamedQuery(name = UnidadeMedida.ListarTodos,
-			query = "from tb_unidade_medida ")
+			query = "from tb_unidade_medida tbUnid"
+					+ "order by tbUnid.nome")
 })
 public @Data class UnidadeMedida implements Entidade {
 	

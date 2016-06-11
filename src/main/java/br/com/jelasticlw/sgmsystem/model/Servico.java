@@ -22,9 +22,11 @@ import lombok.NoArgsConstructor;
 @NamedQueries({
 	@NamedQuery(name = Servico.PesquisaPorDescricao,
 			query = "from tb_servico tbServ "
-					+ "where tbServ.nome like ?"),
+					+ "where tbServ.nome like ? "
+					+ "ordem by tbServ.nome"),
 	@NamedQuery(name = Servico.ListarTodos,
-			query = "from tb_servico ")
+			query = "from tb_servico tbServ"
+					+ "ordem by tbServ.nome")
 })
 public @Data class Servico implements Entidade {
 	
