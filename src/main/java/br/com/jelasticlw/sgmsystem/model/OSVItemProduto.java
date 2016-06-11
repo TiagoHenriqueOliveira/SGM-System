@@ -15,9 +15,6 @@ import lombok.NoArgsConstructor;
 @Table(name="TB_OSV_ITEM_PRODUTO")
 public @Data class OSVItemProduto {
 	
-	@Column(nullable = false, precision = 10, scale = 2)
-	private Double valor;
-	
 	@Column(nullable = false, length = 11)
 	private Integer quantidade;
 	
