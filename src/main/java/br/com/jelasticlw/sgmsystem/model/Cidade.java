@@ -28,7 +28,7 @@ import lombok.NoArgsConstructor;
 					+ "on tbUF.codigo_pais = tbPais.codigo_pais "
 					+ "where tbCid.nome like ? "
 					+ "order by tbCid.nome"),
-	@NamedQuery(name = Cidade.PesquisaTodos,
+	@NamedQuery(name = Cidade.ListarTodos,
 			query = "from tb_cidade tbCid "
 					+ "inner join tb_uf tbUF "
 					+ "on tbCid.codigo_uf = tbUF.codigo_uf "
@@ -39,7 +39,7 @@ import lombok.NoArgsConstructor;
 public @Data class Cidade implements Entidade {
 	
 	public static final String PesquisaPorDescricao = "PesquisaPorNome";
-	public static final String PesquisaTodos = "PesquisaTodos";
+	public static final String ListarTodos = "PesquisaTodos";
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
