@@ -19,7 +19,7 @@ public @Data class Pais implements Entidade {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "codigo_pais")
+	@Column(name = "id_pais")
 	private Long codigo;
 	
 	@Column(nullable = false, length = 60)
