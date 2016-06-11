@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="TB_CIDADE")
 @NamedQueries({
-	@NamedQuery(name = Cidade.PesquisaPorNome, 
+	@NamedQuery(name = Cidade.PesquisaPorDescricao, 
 			query = "from tb_cidade tbCid "
 					+ "inner join tb_uf tbUF "
 					+ "on tbCid.codigo_uf = tbUF.codigo_uf "
@@ -38,7 +38,7 @@ import lombok.NoArgsConstructor;
 })
 public @Data class Cidade implements Entidade {
 	
-	public static final String PesquisaPorNome = "PesquisaPorNome";
+	public static final String PesquisaPorDescricao = "PesquisaPorNome";
 	public static final String PesquisaTodos = "PesquisaTodos";
 	
 	@Id
