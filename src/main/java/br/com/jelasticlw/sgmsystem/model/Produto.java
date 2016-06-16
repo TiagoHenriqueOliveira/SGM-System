@@ -23,15 +23,11 @@ import lombok.NoArgsConstructor;
 @Table(name="TB_PRODUTO")
 @NamedQueries({
 	@NamedQuery(name = Produto.PesquisaPorDescricao,
-			query = "from tb_produto tbProd "
-					+ "inner join tb_unidade_medida tbUnid "
-					+ "on tbProd.id_unidade_medida = tbUnid.id_unidade_medida "
+			query = "from Produto tbProd "
 					+ "where tbProd.nome like ? "
 					+ "order by tbProd.nome"),
 	@NamedQuery(name = Produto.ListarTodos,
-			query = "from tb_produto tbProd "
-					+ "inner join tb_unidade_medida tbUnid "
-					+ "on tbProd.id_unidade_medida = tbUnid.id_unidade_medida "
+			query = "from Produto tbProd "
 					+ "order by tbProd.nome")
 })
 public @Data class Produto implements Entidade {

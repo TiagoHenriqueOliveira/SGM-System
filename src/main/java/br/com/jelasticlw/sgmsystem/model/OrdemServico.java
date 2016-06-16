@@ -30,27 +30,15 @@ import lombok.NoArgsConstructor;
 @Table(name="TB_ORDEM_SERVICO")
 @NamedQueries({
 	@NamedQuery(name = OrdemServico.PesquisaPorDescricao,
-			query = "from tb_ordem_servico tbOSV "
-					+ "inner join tb_veiculo tbVeiculo "
-					+ "on tbOSV.id_veiculo = tbVeiculo.id_veiculo "
-					+ "inner join tb_cliente tbCli "
-					+ "on tbVeiculo.id_cliente = tbCli.id_cliente "
-					+ "where tbCli.nome like ? "
-					+ "order by tbCli.nome"),
+			query = "from OrdemServico tbOSV "
+					+ "where tbOSV.veiculo.cliente.nome like ?1 "
+					+ "order by tbOSV.veiculo.cliente.nome"),
 	@NamedQuery(name = OrdemServico.PesquisaPorPlaca,
-			query = "from tb_ordem_servico tbOSV "
-					+ "inner join tb_veiculo tbVeiculo "
-					+ "on tbOSV.id_veiculo = tbVeiculo.id_veiculo "
-					+ "inner join tb_cliente tbCli "
-					+ "on tbVeiculo.id_cliente = tbCli.id_cliente "
-					+ "where tbVeiculo.placa = ? "),
+			query = "from OrdemServico tbOSV "
+					+ "where tbOSV.veiculo.cliente.placa = ?1 "),
 	@NamedQuery(name = OrdemServico.ListarTodos,
-			query = "from tb_ordem_servico tbOSV "
-					+ "inner join tb_veiculo tbVeiculo "
-					+ "on tbOSV.id_veiculo = tbVeiculo.id_veiculo "
-					+ "inner join tb_cliente tbCli "
-					+ "on tbVeiculo.id_cliente = tbCli.id_cliente "
-					+ "order by tbCli.nome")
+			query = "from OrdemServico tbOSV "
+					+ "order by tbOSV.veiculo.cliente.nome")
 })
 public @Data class OrdemServico implements Entidade {
 	

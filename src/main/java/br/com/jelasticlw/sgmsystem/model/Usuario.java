@@ -19,16 +19,16 @@ import lombok.NoArgsConstructor;
 @Table(name="TB_USUARIO")
 @NamedQueries({
 	@NamedQuery(name = Usuario.PesquisaPorDescricao,
-			query = "from tb_usuario tbUsu "
+			query = "from Usuario tbUsu "
 					+ "where tbUsu.nome like ? "
 					+ "ordem by tbUsu.nome"),
 	@NamedQuery(name = Usuario.ListarTodos,
-			query = "from tb_usuario tbUsu "
+			query = "from Usuario tbUsu "
 					+ "ordem by tbUsu.nome"),
 	@NamedQuery(name = Usuario.Login,
-			query = "from tb_usuario tbUsu "
-					+ "where tbUsu.login = ? "
-					+ "and tbUsu.senha = ?")
+			query = "from Usuario tbUsu "
+					+ "where tbUsu.login = :login "
+					+ "and tbUsu.senha = :senha")
 })
 public @Data class Usuario implements Entidade {
 	

@@ -21,19 +21,11 @@ import lombok.NoArgsConstructor;
 @Table(name="TB_CIDADE")
 @NamedQueries({
 	@NamedQuery(name = Cidade.PesquisaPorDescricao, 
-			query = "from tb_cidade tbCid "
-					+ "inner join tb_uf tbUF "
-					+ "on tbCid.id_uf = tbUF.id_uf "
-					+ "inner join tb_pais tbPais"
-					+ "on tbUF.id_pais = tbPais.id_pais "
+			query = "from Cidade tbCid "
 					+ "where tbCid.nome like ? "
 					+ "order by tbCid.nome"),
 	@NamedQuery(name = Cidade.ListarTodos,
-			query = "from tb_cidade tbCid "
-					+ "inner join tb_uf tbUF "
-					+ "on tbCid.id_uf = tbUF.id_uf "
-					+ "inner join tb_pais tbPais"
-					+ "on tbUF.id_pais = tbPais.id_pais "
+			query = "from Cidade tbCid "
 					+ "order by tbCid.nome")
 })
 public @Data class Cidade implements Entidade {

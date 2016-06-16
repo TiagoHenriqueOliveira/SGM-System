@@ -21,32 +21,14 @@ import lombok.NoArgsConstructor;
 @Table(name="TB_CLIENTE")
 @NamedQueries({
 	@NamedQuery(name = Cliente.PesquisaPorDescricao,
-			query = "from tb_cliente tbCli "
-					+ "inner join tb_cidade tbCid "
-					+ "on tbCli.id_cidade = tbCid.id_cidade "
-					+ "inner join tb_uf tbUF "
-					+ "on tbCid.id_uf = tbUF.id_uf "
-					+ "inner join tb_pais tbPais "
-					+ "on tbUF.id_pais = tbPais.id_pais "
+			query = "from Cliente tbCli "
 					+ "where tbCli.nome like ? "
 					+ "order by tbCli.nome"),
 	@NamedQuery(name = Cliente.PesquisaPorCpf,
-			query = "from tb_cliente tbCli "
-					+ "inner join tb_cidade tbCid "
-					+ "on tbCli.id_cidade = tbCid.id_cidade "
-					+ "inner join tb_uf tbUF "
-					+ "on tbCid.id_uf = tbUF.id_uf "
-					+ "inner join tb_pais tbPais "
-					+ "on tbUF.id_pais = tbPais.id_pais "
+			query = "from Cliente tbCli "
 					+ "where tbCli.cpf = ? "),
 	@NamedQuery(name = Cliente.ListarTodos,
-			query = "from tb_cliente tbCli "
-					+ "inner join tb_cidade tbCid "
-					+ "on tbCli.id_cidade = tbCid.id_cidade "
-					+ "inner join tb_uf tbUF "
-					+ "on tbCid.id_uf = tbUF.id_uf "
-					+ "inner join tb_pais tbPais "
-					+ "on tbUF.id_pais = tbPais.id_pais "
+			query = "from Cliente tbCli "
 					+ "order by tbCli.nome")
 })
 public @Data class Cliente implements Entidade {

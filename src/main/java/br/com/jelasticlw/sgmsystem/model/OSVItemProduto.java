@@ -18,12 +18,8 @@ import lombok.NoArgsConstructor;
 @Table(name="TB_OSV_ITEM_PRODUTO")
 @NamedQueries({
 	@NamedQuery(name = OSVItemProduto.ListarItensDaOrdemServico,
-			query = "from tb_osv_item_produto tbItemProd "
-					+ "inner join tb_ordem_servico tbOSV "
-					+ "on tbItemProd.id_ordem_servico = tbOSV.id_ordem_servico "
-					+ "inner join tb_produto tbProd "
-					+ "on tbItemProd.id_produto = tbProd.id_produto "
-					+ "where tbOSV.id_ordem_servico = ?")
+			query = "from OSVItemProduto tbItemProd "
+					+ "where tbOSV.ordemServico.id_ordem_servico = ?")
 })
 public @Data class OSVItemProduto implements Entidade {
 	

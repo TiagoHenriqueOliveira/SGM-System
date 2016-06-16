@@ -21,20 +21,14 @@ import lombok.NoArgsConstructor;
 @Table(name="TB_VEICULO")
 @NamedQueries({
 	@NamedQuery(name = Veiculo.PesquisaPorDescricao,
-			query = "from tb_veiculo tbVeiculo"
-					+ "inner join tb_cliente tbCli "
-					+ "on tbVeiculo.id_cliente = tbCli.id_cliente "
+			query = "from Veiculo tbVeiculo"
 					+ "where tbVeiculo.nome like ? "
 					+ "order by tbVeiculo.nome"),
 	@NamedQuery(name = Veiculo.PesquisaPorPlaca,
-			query = "from tb_veiculo tbVeiculo"
-					+ "inner join tb_cliente tbCli "
-					+ "on tbVeiculo.id_cliente = tbCli.id_cliente "
+			query = "from Veiculo tbVeiculo"
 					+ "where tbVeiculo.placa = ?"),
 	@NamedQuery(name = Veiculo.ListarTodos,
-			query = "from tb_veiculo tbVeiculo"
-					+ "inner join tb_cliente tbCli "
-					+ "on tbVeiculo.id_cliente = tbCli.id_cliente "
+			query = "from Veiculo tbVeiculo"
 					+ "order by tbVeiculo.nome")
 })
 public @Data class Veiculo implements Entidade {

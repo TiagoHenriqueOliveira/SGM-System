@@ -13,8 +13,8 @@ public class UsuarioDAO<T extends Entidade> extends HibernateDAO<T> {
 		super.conectar();
 		try {
 			TypedQuery<Usuario> query = em.createNamedQuery(Usuario.Login, Usuario.class);
-			query.setParameter(1, login);
-			query.setParameter(2, senha);
+			query.setParameter("login", login);
+			query.setParameter("senha", senha);
 			return query.getSingleResult();
 		} finally {
 			super.desconectar();
