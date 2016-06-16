@@ -2,9 +2,9 @@ package br.com.jelasticlw.sgmsystem.dao;
 
 import javax.enterprise.context.RequestScoped;
 
-import br.com.jelasticlw.sgmsystem.model.Cidade;
+import br.com.jelasticlw.sgmsystem.model.Entidade;
 
 @RequestScoped
-public class CidadeDAO extends HibernateDAO<Cidade>{
+public class CidadeDAO<T extends Entidade> extends HibernateDAO<T> {
 
 }

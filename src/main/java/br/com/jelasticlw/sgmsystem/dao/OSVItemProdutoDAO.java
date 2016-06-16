@@ -2,9 +2,9 @@ package br.com.jelasticlw.sgmsystem.dao;
 
 import javax.enterprise.context.RequestScoped;
 
-import br.com.jelasticlw.sgmsystem.model.OSVItemProduto;
+import br.com.jelasticlw.sgmsystem.model.Entidade;
 
 @RequestScoped
-public class OSVItemProdutoDAO extends HibernateDAO<OSVItemProduto>{
+public class OSVItemProdutoDAO<T extends Entidade> extends HibernateDAO<T> {
 
 }
