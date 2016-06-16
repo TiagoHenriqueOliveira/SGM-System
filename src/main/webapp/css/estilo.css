@@ -1,0 +1,429 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+
+* {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.intro, .relatorio, .conteudo, .informacoes_agenda, .informacoes_estoque, .informacoes_cadastros, .informacoes-dispositivo, .destaque, .agendamento-servico, .controle-estoque, .cadastro-cliente, .dispositivo, .info-orcamento {
+    padding: 0px !important;
+}
+
+section {
+    margin: 20px 0px;
+}
+
+section h2 {
+    color: #337AB7;
+    font-weight: bold;
+    font-size: 18pt;
+    margin: 0px;
+    padding: 20px;
+}
+
+.imagem-agenda, .imagem-cadastro, .imagem-dispositivo, .imagem-estoque {
+    margin: 0px;
+    padding: 30px 0px !important;
+}
+
+.intro p, .informacoes_agenda p, .informacoes-dispositivo p, .informacoes_estoque p, .informacoes_cadastros p {
+    color: #000000;
+    font-size: 12pt;
+    text-align: justify;
+    padding: 0px 20px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.intro p:last-child, .informacoes_agenda p:last-child, .informacoes_estoque p:last-child, .informacoes_cadastros p:last-child {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.informacoes-dispositivo ul, .relatorio ul {
+    padding-left: 60px;
+    margin-bottom: 30px;
+}
+
+.informacoes-dispositivo ul li, .relatorio ul li {
+    font-size: 12pt;
+    margin-bottom: 5px;
+}
+
+.agendamento-servico, .cadastro-cliente, .info-orcamento {
+    border: none;
+}
+
+.banner {
+    background-image: url(../imgs/banner.jpg);
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}
+
+.logo {
+    padding: 0px !important;
+    margin: 30px 0px;
+}
+
+.logo h1 {
+    font-size: 32pt;
+    font-weight: bold;
+    margin: 0px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.banner a {
+    text-decoration: none !important;
+}
+
+.banner h2 {
+    font-size: 16pt;
+    margin: 0px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.menu ul {
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    font-size: 12pt;
+}
+
+.menu ul li {
+	background-color: rgba(51,122,183,0.8);
+    position: relative;
+    display: block;
+}
+
+.menu ul li a {
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.menu ul li a:hover {
+    background: #337AB7;
+    color: #FFFFFF;
+}
+
+.intro h2, .relatorio h2 {
+    color: #337AB7;
+    font-weight: bold;
+    font-size: 18pt;
+    text-align: left;
+    padding: 20px;
+    margin: 0px;
+}
+
+.relatorio h2 {
+    border-top: 2px solid #2aff00;
+    border-top-style: inset;
+}
+
+.orcamento h3 {
+    font-size: 20pt;
+    color: #337ab7;
+    padding: 20px 10px;
+    margin: 0px;
+}
+
+.orcamento h4 {
+    font-size: 14pt;
+    padding: 20px 10px;
+    margin: 0px;
+}
+
+.solicita-orcamento {
+    width: 200px;
+    height: 40px;
+    float: right;
+    font-size: 12pt;
+    margin: 10px 0px;
+    background-color: #337ab7;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+.menu-rodape ul {
+    width: 100%;
+    list-style: none;
+    float: left;
+    margin: 20px 0px;
+    padding: 0px;
+    font-size: 12pt;
+    text-align: center;
+}
+
+.menu-rodape ul li {
+    position: relative;
+    display: block;
+}
+
+.menu-rodape ul li a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+}
+
+.menu-rodape ul li a:hover {
+    background: #337ab7;
+    color: #FFFFFF;
+}
+
+.rodape {
+    margin: 0px;
+    padding: 0px 20px;
+}
+
+.rodape footer {
+    text-align: center;
+}
+
+h3 {
+    color: #337AB7;
+    font-weight: bold;
+    font-size: 18pt;
+    margin: 0px;
+    padding: 20px 0px;
+}
+
+.form-fale-conosco {
+    margin-bottom: 30px;
+}
+
+.form-fale-conosco label {
+    font-size: 12pt;
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 3px;
+}
+
+.form-fale-conosco input, .form-fale-conosco textarea, .form-fale-conosco legend {
+    font-size: 12pt;
+}
+
+.form-fale-conosco fieldset {
+    margin: 0px;
+    border: #337AB7 solid 2px;
+}
+
+.form-fale-conosco input, .form-fale-conosco textarea {
+    border: #337AB7 solid 2px;
+}
+
+.enviar {
+    height: 40px;
+    width: 120px;
+    font-size: 14pt;
+    margin-top: 10px;
+    background-color: #066;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+.info-localizacao, .form-fale-conosco, .fale-conosco {
+    padding: 0px !important;
+}
+
+.info-localizacao div {
+    padding: 0px !important;
+}
+
+.info-localizacao h3 {
+    padding: 20px 0px;
+}
+
+.info-localizacao h4 {
+    padding: 0px 15px;
+    margin: 0px;
+}
+
+.info-localizacao p {
+    padding: 0px 25px;
+    margin: 5px 0px;
+}
+
+.info-localizacao p:last-child {
+    margin-bottom: 15px;
+}
+
+.solicite-orcamento, .form-orcamento {
+    padding: 0px !important;
+}
+
+.form-orcamento {
+    margin-bottom: 30px;
+}
+
+.form-orcamento label {
+    font-size: 12pt;
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 3px;
+}
+
+.form-orcamento input, .form-orcamento textarea, .form-orcamento legend {
+    font-size: 12pt;
+}
+
+.form-orcamento fieldset {
+    margin: 0px;
+    border: #337AB7 solid 2px;
+}
+
+.form-orcamento input, .form-orcamento textarea {
+    border: #337AB7 solid 2px;
+}
+
+.envia-orcamento {
+    height: 40px;
+    width: 170px;
+    font-size: 14pt;
+    margin-top: 10px;
+    background-color: #066;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+#banner, #rodape {
+    padding: 0px !important;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.login, .senha-login {
+    margin: 10px 0px;
+}
+
+.form-signin .form-signin-heading, .form-signin .checkbox {
+    margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+    font-weight: normal;
+}
+
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/*Large*/
+@media all and (min-width: 1200px) {
+    .solicita-orcamento {
+        margin-top: 30px;
+    }
+}
+
+/*Medium*/
+@media all and (min-width: 992px) {
+    .relatorio h2 {
+        border-top: none !important;
+    }
+
+    .relatorio ul {
+        margin-top: 0px;
+    }
+
+    .imagem-agenda, .imagem-cadastro {
+        float: right !important;
+    }
+
+    .imagem-orcamento {
+        float: right !important;
+        display: block;
+    }
+}
+
+/*Small*/
+@media all and (min-width: 768px) {
+	.banner {
+		height: 250px;
+	}
+	
+    .logo h1 {
+        font-size: 36pt;
+    }
+
+    .menu ul {
+        width: auto;
+        float: right !important;
+        margin-top: 10px;
+    }
+
+    .menu ul li {
+        display: inline-block;
+    }
+
+    .menu-rodape ul {
+        width: auto;
+        margin: 0px;
+    }
+
+    .menu-rodape ul li {
+        display: inline-block;
+    }
+
+    .info-orcamento {
+        margin-bottom: 20px;
+    }
+
+    .orcamento h4 {
+        padding: 0px 10px 10px 10px;
+    }
+
+    .rodape footer {
+    	text-align: right;
+    }
+    
+    .rodape footer p {
+    	margin-top: 0px !important;
+    	margin-bottom: 10px !important;
+    }
+
+    .info-localizacao h3 {
+        padding: 10px 0px;
+    }
+    
+    #rodape {
+    	padding-top: 50px !important;
+    }
+}

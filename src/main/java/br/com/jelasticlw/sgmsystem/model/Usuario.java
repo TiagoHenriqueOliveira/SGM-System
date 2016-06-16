@@ -23,13 +23,18 @@ import lombok.NoArgsConstructor;
 					+ "where tbUsu.nome like ? "
 					+ "ordem by tbUsu.nome"),
 	@NamedQuery(name = Usuario.ListarTodos,
-			query = "from tb_usuario tbUsu"
-					+ "ordem by tbUsu.nome")
+			query = "from tb_usuario tbUsu "
+					+ "ordem by tbUsu.nome"),
+	@NamedQuery(name = Usuario.Login,
+			query = "from tb_usuario tbUsu "
+					+ "where tbUsu.login = ? "
+					+ "and tbUsu.senha = ?")
 })
 public @Data class Usuario implements Entidade {
 	
 	public static final String PesquisaPorDescricao = "PesquisaPorDescricao";
 	public static final String ListarTodos = "ListarTodos";
+	public static final String Login = "Login";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
