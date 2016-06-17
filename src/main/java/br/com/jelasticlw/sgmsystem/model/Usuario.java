@@ -18,27 +18,26 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="TB_USUARIO")
 @NamedQueries({
-	@NamedQuery(name = Usuario.PesquisaPorDescricao,
-			query = "from Usuario tbUsu "
-					+ "where tbUsu.nome like ? "
-					+ "ordem by tbUsu.nome"),
-	@NamedQuery(name = Usuario.ListarTodos,
-			query = "from Usuario tbUsu "
-					+ "ordem by tbUsu.nome"),
+	@NamedQuery(name = Usuario.PesquisaNomeUsuario,
+			query = "from Usuario u "
+					+ "where u.nome like ? "
+					+ "ordem by u.nome"),
+	@NamedQuery(name = Usuario.ListarTodosUsuarios,
+			query = "from Usuario u "
+					+ "ordem by u.nome"),
 	@NamedQuery(name = Usuario.Login,
-			query = "from Usuario tbUsu "
-					+ "where tbUsu.login = :login "
-					+ "and tbUsu.senha = :senha")
+			query = "from Usuario u "
+					+ "where u.login = :login "
+					+ "and u.senha = :senha")
 })
 public @Data class Usuario implements Entidade {
 	
-	public static final String PesquisaPorDescricao = "PesquisaPorDescricao";
-	public static final String ListarTodos = "ListarTodos";
+	public static final String PesquisaNomeUsuario = "PesquisaNomeUsuario";
+	public static final String ListarTodosUsuarios = "ListarTodosUsuarios";
 	public static final String Login = "Login";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_usuario")
 	private Long codigo;
 	
 	@Column(nullable = false, length = 255)

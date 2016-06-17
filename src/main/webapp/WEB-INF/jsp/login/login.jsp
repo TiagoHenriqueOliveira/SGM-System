@@ -40,10 +40,10 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <form class="form-signin" action="<c:url value='/sistema'/>" method="post">
                 <h2 class="form-signin-heading">Acesso ao Sistema</h2>
-                <label for="txtLogin" class="sr-only">Email address</label>
-                <input type="text" id="txtLogin" class="form-control login" placeholder="Login" name="usuario.login"  required autofocus>
-                <label for="txtSenha" class="sr-only">Password</label>
-                <input type="password" id="txtSenha" class="form-control senha-login" placeholder="Senha" required>
+                <input type="text" class="form-control login"
+                	placeholder="Login" name="usuario.login" value="${usuario.login}" required autofocus>
+                <input type="password" class="form-control senha-login"
+                	placeholder="Senha" name="usuario.senha" value="${usuario.senha}" required>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Acessar</button>
             </form>
         </div> <!-- /login -->

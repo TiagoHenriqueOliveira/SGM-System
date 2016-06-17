@@ -16,7 +16,7 @@ import br.com.jelasticlw.sgmsystem.model.Entidade;
 public abstract class HibernateDAO<T extends Entidade> implements GenericDAO<T> {
 	
 	@Produces
-	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("sgm-system");
+	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("sgmsystem");
 	
 	@Produces
 	protected EntityManager em;

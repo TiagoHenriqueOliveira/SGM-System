@@ -10,7 +10,8 @@ import br.com.caelum.vraptor.Result;
 @Controller
 public class IndexController {
 
-	private final Result result;
+	@Inject
+	private Result result;
 
 	/**
 	 * @deprecated CDI eyes only
