@@ -18,22 +18,13 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="TB_USUARIO")
 @NamedQueries({
-	@NamedQuery(name = Usuario.PesquisaNomeUsuario,
-			query = "from Usuario u "
-					+ "where u.nome like ? "
-					+ "ordem by u.nome"),
-	@NamedQuery(name = Usuario.ListarTodosUsuarios,
-			query = "from Usuario u "
-					+ "ordem by u.nome"),
 	@NamedQuery(name = Usuario.Login,
-			query = "from Usuario u "
+			query = "select u from Usuario u "
 					+ "where u.login = :login "
 					+ "and u.senha = :senha")
 })
 public @Data class Usuario implements Entidade {
 	
-	public static final String PesquisaNomeUsuario = "PesquisaNomeUsuario";
-	public static final String ListarTodosUsuarios = "ListarTodosUsuarios";
 	public static final String Login = "Login";
 
 	@Id
@@ -48,7 +39,4 @@ public @Data class Usuario implements Entidade {
 	
 	@Column(nullable = false, length = 15)
 	private String senha;
-	
-	@Column(nullable = false)
-	private Boolean foraDeUso;
 }

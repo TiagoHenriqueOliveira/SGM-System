@@ -1,6 +1,7 @@
 package br.com.jelasticlw.sgmsystem.dao;
 
 import javax.enterprise.context.RequestScoped;
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import br.com.jelasticlw.sgmsystem.model.Usuario;
@@ -15,6 +16,8 @@ public class UsuarioDAO extends HibernateDAO<Usuario> {
 			query.setParameter("login", login);
 			query.setParameter("senha", senha);
 			return query.getSingleResult();
+		} catch (NoResultException e) {
+			return null;
 		} finally {
 			super.desconectar();
 		}
