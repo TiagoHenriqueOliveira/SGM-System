@@ -39,4 +39,9 @@ public class IndexController {
 	public void orcamento() {
 		result.include("variable", "");
 	}
+	
+	@Get("/login")
+	public void login() {
+		result.include("variable", "");
+	}
 }
