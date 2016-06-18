@@ -7,22 +7,22 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 
 @Controller
-public class SistemaController {
+public class VeiculoController {
 
 	@Inject
 	private Result result;
 
-	protected SistemaController() {
+	protected VeiculoController() {
 		this(null);
 	}
 
 	@Inject
-	public SistemaController(Result result) {
+	public VeiculoController(Result result) {
 		this.result = result;
 	}
-
-	@Path("/sistema")
-	public void sistema() {
+	
+	@Path("/veiculo")
+	public void veiculo() {
 		result.include("variable", "");
 	}
 }

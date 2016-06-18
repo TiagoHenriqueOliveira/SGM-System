@@ -43,7 +43,7 @@
                 <input type="text" class="form-control login"
                 	placeholder="Login" name="usuario.login" value="${usuario.login}" required autofocus>
                 <input type="password" class="form-control senha-login"
-                	placeholder="Senha" name="usuario.senha" value="${usuario.senha}" required>
+                	placeholder="Senha" name="usuario.senha" value="${usuario.senha}" required autofocus>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Acessar</button>
             </form>
         </div> <!-- /login -->

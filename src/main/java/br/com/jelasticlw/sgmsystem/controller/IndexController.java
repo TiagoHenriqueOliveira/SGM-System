@@ -13,9 +13,6 @@ public class IndexController {
 	@Inject
 	private Result result;
 
-	/**
-	 * @deprecated CDI eyes only
-	 */
 	protected IndexController() {
 		this(null);
 	}
@@ -37,11 +34,6 @@ public class IndexController {
 	
 	@Get("/orcamento")
 	public void orcamento() {
-		result.include("variable", "");
-	}
-	
-	@Get("/login")
-	public void login() {
 		result.include("variable", "");
 	}
 }
