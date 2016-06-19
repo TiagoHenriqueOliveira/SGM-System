@@ -28,7 +28,6 @@ public class UsuarioController {
 	
 	@Path("/usuario")
 	public void usuario(Usuario usuario) {
-	
 		if(usuario!= null){
 			try {
 				usuarioDao.salvar(usuario);				
@@ -36,7 +35,6 @@ public class UsuarioController {
 				// TODO: handle exception
 			}
 		}
-		
 		result.include("usuarioview", usuarioDao.listarTodos(Usuario.class));
 	}
 }
