@@ -21,11 +21,14 @@ import lombok.NoArgsConstructor;
 	@NamedQuery(name = Usuario.Login,
 			query = "select u from Usuario u "
 					+ "where u.login = :login "
-					+ "and u.senha = :senha")
+					+ "and u.senha = :senha"),
+	@NamedQuery(name = Usuario.ListarTodos,
+	query = "select u from Usuario u ")
 })
 public @Data class Usuario implements Entidade {
 	
 	public static final String Login = "Login";
+	public static final String ListarTodos = "ListarTodos";
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

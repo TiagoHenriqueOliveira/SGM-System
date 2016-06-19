@@ -350,6 +350,25 @@ h3 {
     border-top-right-radius: 0;
 }
 
+/*
+ * css Sistema
+ */
+.left{ float: left} .rigth{float:right}.center{margin:0 auto;}
+input, tr{
+	text-transform: uppercase;
+}
+
+.tabela tr:hover{
+	background-color: #f5f5f5; 
+}
+.foraUso{
+	margin-top: 25px;
+}
+.paddingOff{
+	padding-left: 0;
+}
+
+
 /*Large*/
 @media all and (min-width: 1200px) {
     .solicita-orcamento {
