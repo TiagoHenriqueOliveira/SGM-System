@@ -24,16 +24,15 @@ $(document).ready(function() {
 		todayHighlight : true
 	});
 });
+(function($) {
 
-$('#cadastro.hora').timepicker({
-	minuteStep : 1,
-	template : 'modal',
-	appendWidgetTo : 'body',
-	showSeconds : true,
-	showMeridian : false,
-	defaultTime : false
-});
+  RemoveTableRow = function(handler) {
+    var tr = $(handler).closest('tr');
 
-jQuery(function($) {
-	$("#cliente.cpf").mask("999.999.999-99");
-}); 
+    tr.fadeOut(400, function(){ 
+      tr.remove(); 
+    }); 
+
+    return false;
+  };
+})(jQuery);

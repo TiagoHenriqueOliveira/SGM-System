@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
@@ -58,61 +59,131 @@
 								</button>
 								<h4 class="modal-title" id="myModalLabel">Cliente</h4>
 							</div>
-							<div class="modal-body">
-								<div class=" row">
+							<div>
 
-									<form data-toggle="validator" role="form">
-										<div class="form-group col-sm-12">
-											<label for="inputName" class="control-label">Name</label> <input
-												type="text" class="form-control" id="inputName" required>
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs" role="tablist">
+									<li role="presentation" class="active"><a href="#home"
+										aria-controls="home" role="tab" data-toggle="tab">Cliente</a></li>
+									<li role="presentation"><a href="#profile"
+										aria-controls="profile" role="tab" data-toggle="tab">Veículo</a></li>
+								</ul>
+
+								<!-- Tab panes -->
+								<div class="tab-content">
+									<div role="tabpanel" class="tab-pane active" id="home">
+										<div class="modal-body">
+											<div class=" row">
+
+												<form data-toggle="validator" role="form">
+													<div class="form-group col-sm-12">
+														<label for="inputName" class="control-label">Name</label>
+														<input type="text" class="form-control" id="inputName"
+															required>
+													</div>
+													<div class="form-group col-sm-6">
+														<label for="cliente.fone" class="control-label">Telefone:</label>
+														<input type="text" class="form-control" id="cliente.fone"
+															name="cliente.fone" required>
+													</div>
+													<div class="form-group col-sm-6">
+														<label for="cliente.cidade" class="control-label">Cidade:</label>
+														<select class="form-control col-sm-2" id="cliente.cidade"
+															name="cliente.cidade">
+															<option>Xanxerê</option>
+														</select>
+													</div>
+													<div class="form-group col-sm-6">
+														<label for="cliente.bairro" class="control-label">Bairro:</label>
+														<input type="text" class="form-control"
+															id="cliente.bairro" name="cliente.bairro" required>
+													</div>
+													<div class="form-group col-sm-6">
+														<label for="cliente.endereco" class="control-label">Endereço:</label>
+														<input type="text" class="form-control"
+															id="cliente.endereco" name="cliente.endereco" required>
+													</div>
+													<div class="form-group col-sm-4">
+														<label for="cliente.numero" class="control-label">Numero:</label>
+														<input type="text" class="form-control"
+															data-mask="999-99-999-9999-9" id="cliente.numero"
+															name="cliente.numero" required>
+													</div>
+													<div class="form-group col-sm-4">
+														<label for="cliente.cpf" class="control-label">CPF:</label>
+														<input type="text" class="form-control" id="cliente.cpf"
+															name="cliente.cpf" required>
+													</div>
+													<div class="checkbox col-sm-3 col-sm-offset-1 foraUso">
+														<label for="cliente.fora" class=""><input
+															type="checkbox" value="" name="cliente.fora">Fora
+															de uso</label>
+													</div>
+													<div class="modal-footer col-xs-12">
+														<button type="button" class="btn btn-danger"
+															data-dismiss="modal">Cancelar</button>
+														<button type="submit" class="btn btn-success">
+															Salvar</button>
+													</div>
+												</form>
+											</div>
 										</div>
-										<div class="form-group col-sm-6">
-											<label for="cliente.fone" class="control-label">Telefone:</label>
-											<input type="text" class="form-control" id="cliente.fone"
-												name="cliente.fone" required>
+									</div>
+									<div role="tabpanel" class="tab-pane" id="profile">
+										<div class="modal-body">
+											<div class=" row">
+
+												<form data-toggle="validator" role="form">
+													<div class="form-group col-lg-5">
+														<label for="inputName" class="control-label">Nome</label>
+														<input type="text" class="form-control" id="inputName"
+															required>
+													</div>
+													<div class="form-group col-sm-5">
+														<label for="veiculo.placa" class="control-label">Placa:</label>
+														<input type="text" class="form-control" id="veiculo.placa"
+															name="veiculo.placa" required>
+													</div>
+													<div class="checkbox col-sm-3 col-sm-offset-1 foraUso">
+														<label for="veiculo.fora" class=""> <input
+															type="checkbox" value="" name="veiculo.fora">
+															Fora de uso
+														</label>
+													</div>
+													<div class="modal-footer col-xs-12">
+														<button type="button" class="btn btn-danger"
+															data-dismiss="modal">Cancelar</button>
+														<button type="submit" class="btn btn-success">
+															Salvar</button>
+													</div>
+													<div class="tabela">
+														<table class="table table-bordered">
+															<thead>
+																<tr>
+																	<th class="col-sm-4">Nome</th>
+																	<th class="col-sm-4">Placa</th>
+																	<th class="col-sm-1">Ação</th>
+																</tr>
+															</thead>
+															<tr>
+																<td>Honda Civic</td>
+																<td>AAA-0099</td>
+																<td>
+																	<button type="button" class="btn btn-danger btn-xs"
+																		data-toggle="modal"">Excluir</button>
+																</td>
+																</td>
+															</tr>
+														</table>
+													</div>
+												</form>
+											</div>
 										</div>
-										<div class="form-group col-sm-6">
-											<label for="cliente.cidade" class="control-label">Cidade:</label>
-											<select class="form-control col-sm-2" id="cliente.cidade"
-												name="cliente.cidade">
-												<option>Xanxerê</option>
-											</select>
-										</div>
-										<div class="form-group col-sm-6">
-											<label for="cliente.bairro" class="control-label">Bairro:</label>
-											<input type="text" class="form-control" id="cliente.bairro"
-												name="cliente.bairro" required>
-										</div>
-										<div class="form-group col-sm-6">
-											<label for="cliente.endereco" class="control-label">Endereço:</label>
-											<input type="text" class="form-control" id="cliente.endereco"
-												name="cliente.endereco" required>
-										</div>
-										<div class="form-group col-sm-4">
-											<label for="cliente.numero" class="control-label">Numero:</label>
-											<input type="text" class="form-control"
-												data-mask="999-99-999-9999-9" id="cliente.numero"
-												name="cliente.numero" required>
-										</div>
-										<div class="form-group col-sm-4">
-											<label for="cliente.cpf" class="control-label">CPF:</label> <input
-												type="text" class="form-control" id="cliente.cpf"
-												name="cliente.cpf" required>
-										</div>
-										<div class="checkbox col-sm-3 col-sm-offset-1 foraUso">
-											<label for="cliente.fora" class=""><input
-												type="checkbox" value="" name="cliente.fora">Fora de
-												uso</label>
-										</div>
-										<div class="modal-footer col-xs-12">
-											<button type="button" class="btn btn-danger"
-												data-dismiss="modal">Cancelar</button>
-											<button type="submit" class="btn btn-success">
-												Salvar</button>
-										</div>
-									</form>
+									</div>
 								</div>
+
 							</div>
+
 						</div>
 					</div>
 				</div>
