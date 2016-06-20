@@ -46,4 +46,6 @@ public class ClienteController {
 //	public void adicionar(Uf uf){
 //		result.include("ufview",ufDao.listarTodos(Uf.class));
 //	}
+	
+	
 }
