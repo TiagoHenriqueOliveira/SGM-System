@@ -29,7 +29,7 @@
 				<div class="well col-xs-12">
 					<div class="col-xs-3 col-md-4">
 						<button type="button" class="btn btn-primary" data-toggle="modal"
-							data-target="#addCliente">
+							data-target="#addCliente" >
 							<span class="glyphicon glyphicon-plus"></span> Adicionar
 						</button>
 					</div>
@@ -78,41 +78,55 @@
 												<form data-toggle="validator" role="form">
 													<div class="form-group col-sm-12">
 														<label for="inputName" class="control-label">Name</label>
-														<input type="text" class="form-control" id="inputName"
+														<input type="text" class="form-control" id="inputName" value="${cliente.nome}"
 															required>
 													</div>
 													<div class="form-group col-sm-6">
 														<label for="cliente.fone" class="control-label">Telefone:</label>
 														<input type="text" class="form-control" id="cliente.fone"
-															name="cliente.fone" required>
+															name="cliente.fone"  value="${cliente.fone}" required>
 													</div>
-													<div class="form-group col-sm-6">
+													<div class="form-group col-sm-2">
+														<label for="cliente.uf" class="control-label">Uf:</label>
+														<select class="form-control col-sm-2" id="cliente.uf"
+															name="cliente.uf">
+															<option>"SC"</option>
+															<option>"PR"</option>
+															
+<%-- 															<c:forEach items="${ufview}" var="uf"> --%>
+<%-- 																<option>${uf.nome}</option> --%>
+<%-- 															</c:forEach> --%>
+														</select>
+													</div>
+													<div class="form-group col-sm-4">
 														<label for="cliente.cidade" class="control-label">Cidade:</label>
 														<select class="form-control col-sm-2" id="cliente.cidade"
 															name="cliente.cidade">
 															<option>Xanxerê</option>
+															<option>"chapecó"</option>
+															<option>"Guarapuava"</option>
 														</select>
 													</div>
 													<div class="form-group col-sm-6">
 														<label for="cliente.bairro" class="control-label">Bairro:</label>
 														<input type="text" class="form-control"
-															id="cliente.bairro" name="cliente.bairro" required>
+															id="cliente.bairro" name="cliente.bairro"  value="${cliente.bairro}" required>
 													</div>
 													<div class="form-group col-sm-6">
 														<label for="cliente.endereco" class="control-label">Endereço:</label>
 														<input type="text" class="form-control"
-															id="cliente.endereco" name="cliente.endereco" required>
+															id="cliente.endereco" name="cliente.endereco" value="${cliente.Endereco}" required>
 													</div>
 													<div class="form-group col-sm-4">
 														<label for="cliente.numero" class="control-label">Numero:</label>
 														<input type="text" class="form-control"
 															data-mask="999-99-999-9999-9" id="cliente.numero"
-															name="cliente.numero" required>
+															name="cliente.numero" value="${cliente.numero}" required>
 													</div>
 													<div class="form-group col-sm-4">
 														<label for="cliente.cpf" class="control-label">CPF:</label>
 														<input type="text" class="form-control" id="cliente.cpf"
-															name="cliente.cpf" required>
+															name="cliente.cpf" value="${cliente.cpf}" required>
 													</div>
 													<div class="checkbox col-sm-3 col-sm-offset-1 foraUso">
 														<label for="cliente.fora" class=""><input
@@ -197,16 +211,18 @@
 								<th class="col-sm-1">Ação</th>
 							</tr>
 						</thead>
-						<tr>
-							<td>Joao da Silva</td>
-							<td>49 9999-9999</td>
-							<td>999.999.999-99</td>
-							<td>
-								<button type="button" class="btn btn-success btn-xs"
-									data-toggle="modal" data-target="#addCliente">Editar</button>
-							</td>
-							</td>
-						</tr>
+						<c:forEach items="${clienteview}" var="cliente">
+							<tr>
+								<td>${cliente.nome}</td>
+								<td>${cliente.fone}</td>
+								<td>${cliente.cpf}</td>
+								<td>
+									<button type="button" class="btn btn-success btn-xs"
+										data-toggle="modal" data-target="#addUsuario"">Editar</button>
+								</td>
+							</tr>
+						</c:forEach>
+						
 
 					</table>
 				</div>
