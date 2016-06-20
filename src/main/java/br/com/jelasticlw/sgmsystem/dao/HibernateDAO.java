@@ -85,7 +85,8 @@ public abstract class HibernateDAO<T extends Entidade> implements GenericDAO<T> 
 	public List<T> buscarPorDescricao(Class<T> classe, String descricao) {
 		this.conectar();
 		try {
-			TypedQuery<T> query = em.createNamedQuery("PesquisaPorDescricao", classe);
+			String hql = "from " + classe.getName() + " a where a.nome like ?";
+			TypedQuery<T> query = em.createQuery(hql, classe);
 			query.setParameter(1, "%" + descricao + "%");
 			return query.getResultList();
 		} finally {
@@ -97,7 +98,8 @@ public abstract class HibernateDAO<T extends Entidade> implements GenericDAO<T> 
 	public List<T> listarTodos(Class<T> classe) {
 		this.conectar();
 		try {
-			TypedQuery<T> query = em.createNamedQuery("ListarTodos", classe);
+			String hql = "from " + classe.getName();
+			TypedQuery<T> query = em.createQuery(hql, classe);
 			return query.getResultList();
 		} finally {
 			this.desconectar();

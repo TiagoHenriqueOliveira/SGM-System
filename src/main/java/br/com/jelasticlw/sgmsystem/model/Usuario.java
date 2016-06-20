@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 	@NamedQuery(name = Usuario.Login,
 			query = "select u from Usuario u "
 					+ "where u.login = :login "
-					+ "and u.senha = :senha") //função da query é para verificar o login
+					+ "and u.senha = :senha")
 })
 public @Data class Usuario implements Entidade {
 	
