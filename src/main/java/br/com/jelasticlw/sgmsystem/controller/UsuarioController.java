@@ -3,7 +3,8 @@ package br.com.jelasticlw.sgmsystem.controller;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Get;
+import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.jelasticlw.sgmsystem.dao.UsuarioDAO;
 import br.com.jelasticlw.sgmsystem.model.Usuario;
@@ -26,7 +27,12 @@ public class UsuarioController {
 		this.result = result;
 	}
 	
-	@Path("/usuario")
+	@Get("/usuarioCarrega")
+	public void usuario() {
+		result.include("usuarioview", usuarioDao.listarTodos(Usuario.class));
+	}
+	
+	@Post("/usuario")
 	public void usuario(Usuario usuario) {
 		if(usuario!= null){
 			try {
