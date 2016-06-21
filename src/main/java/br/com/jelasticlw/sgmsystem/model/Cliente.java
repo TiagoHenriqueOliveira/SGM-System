@@ -1,12 +1,13 @@
 package br.com.jelasticlw.sgmsystem.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -17,25 +18,37 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name="TB_CLIENTE")
-//@NamedQueries({
-//	@NamedQuery(name = Cliente.ListarTodos,
-//			query = "select cl from Cliente cl "),
-//})
 public @Data class Cliente implements Entidade {
 	
-//	public static final String ListarTodos = "ListarTodos";
-	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	
+	@Column(nullable = false, length = 255)
 	private String nome;
-	private String telefone;
+	
+	@Column(nullable = false, length = 11, unique = true)
+	private String cpf;
+	
+	@Column(nullable = false, length = 255)
+	private String rua;
+	
+	@Column(nullable = false, length = 255)
 	private String bairro;
-	private String endereco;
+	
+	@Column(nullable = false)
 	private Integer numero;
-	private Integer cpf;
-//	@OneToMany
 	
+	@Column(length = 10)
+	private String telCelular;
 	
+	@Column(length = 10)
+	private String telResidencial;
+	
+	@Column(nullable = false, length = 255, unique = true)
+	private String email;
+	
+	@ManyToOne(optional = true, fetch = FetchType.EAGER)
+	@JoinColumn(name = "id_cidade")
+	private Cidade cidade;
 }
