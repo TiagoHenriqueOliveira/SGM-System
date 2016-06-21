@@ -62,7 +62,7 @@
 							<div class="modal-body">
 								<div class=" row">
 
-									<form data-toggle="validator" role="form">
+									<form data-toggle="validator" role="form" action="<c:url value='/usuario'/>" method="post">
 										<div class="form-group col-sm-6">
 											<label for="inputName" class="control-label">Name</label> <input
 												type="text" class="form-control" id="inputName"
@@ -79,12 +79,6 @@
 												id="usuario.senha" name="usuario.senha"
 												value="${usuario.senha}" required>
 										</div>
-										<div class="checkbox col-sm-5 col-sm-offset-1 foraUso">
-											<label for="usuario.fora" class=""><input
-												type="checkbox" value="" name="usuario.foraUso"
-												value="${usuario.foraUso}">Fora de uso</label>
-										</div>
-
 										<div class="modal-footer col-xs-12">
 											<button type="button" class="btn btn-danger"
 												data-dismiss="modal">Cancelar</button>
@@ -109,12 +103,57 @@
 						<c:forEach items="${usuarioview}" var="usuario">
 							<tr>
 								<td>${usuario.nome}</td>
-								<td>${usuario.login }</td>
+								<td>${usuario.login}</td>
 								<td>
 									<button type="button" class="btn btn-success btn-xs"
-										data-toggle="modal" data-target="#addUsuario"">Editar</button>
+										data-toggle="modal" data-target="#addUsuario${usuario.codigo}">Editar</button>
 								</td>
 							</tr>
+							<div class="modal fade " id="addUsuario${usuario.codigo}" tabindex="-1" role="dialog"
+								aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+			
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+											<h4 class="modal-title" id="myModalLabel">Usuario</h4>
+										</div>
+										<div class="modal-body">
+											<div class=" row">
+			
+												<form data-toggle="validator" role="form" action="<c:url value='/usuario'/>" method="post">
+													<input type="hidden" name="usuario.codigo" value="${usuario.codigo}">
+													<div class="form-group col-sm-6">
+														<label for="inputName" class="control-label">Name</label> <input
+															type="text" class="form-control" id="inputName"
+															name="usuario.nome" value="${usuario.nome}" required>
+													</div>
+													<div class="form-group col-sm-6">
+														<label for="usuario.login" class="control-label">Login:</label>
+														<input type="text" class="form-control" id="usuario.login"
+															name="usuario.login" value="${usuario.login}" required>
+													</div>
+													<div class="form-group col-sm-6">
+														<label for="usuario.senha" class="control-label">Senha:</label>
+														<input type="password" class="form-control"
+															id="usuario.senha" name="usuario.senha"
+															value="${usuario.senha}" required>
+													</div>
+													<div class="modal-footer col-xs-12">
+														<button type="button" class="btn btn-danger"
+															data-dismiss="modal">Cancelar</button>
+														<button type="submit" class="btn btn-success">
+															Salvar</button>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</c:forEach>
 					</table>
 				</div>
