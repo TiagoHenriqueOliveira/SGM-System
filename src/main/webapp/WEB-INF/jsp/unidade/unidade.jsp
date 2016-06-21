@@ -105,7 +105,6 @@
 								aria-labelledby="myModalLabel">
 								<div class="modal-dialog" role="document">
 									<div class="modal-content">
-			
 										<div class="modal-header">
 											<button type="button" class="close" data-dismiss="modal"
 												aria-label="Close">
@@ -117,6 +116,7 @@
 											<div class=" row">
 			
 												<form data-toggle="validator" role="form" action="<c:url value='/unidade'/>" method="post">
+													<input type="hidden" name="unidade.codigo" value="${unidade.codigo}">
 													<div class="form-group col-sm-8">
 														<label for="inputName" class="control-label">Nome</label> <input
 															type="text" class="form-control" id="inputName" 
