@@ -123,7 +123,6 @@
 										</div>
 										<div class="modal-body">
 											<div class=" row">
-			
 												<form data-toggle="validator" role="form" action="<c:url value='/usuario'/>" method="post">
 													<input type="hidden" name="usuario.codigo" value="${usuario.codigo}">
 													<div class="form-group col-sm-6">
