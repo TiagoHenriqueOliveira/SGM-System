@@ -61,10 +61,17 @@
 								<div class=" row">
 
 									<form data-toggle="validator" role="form">
-										<div class="form-group col-sm-12">
+										<div class="form-group col-sm-10">
 											<label for="inputName" class="control-label">Nome</label> <input
 												type="text" class="form-control" id="inputName" required>
 										</div>
+										<div class="form-group col-sm-2">
+														<label for="produto.unidade" class="control-label">UN:</label>
+														<select class="form-control col-sm-2" id="produto.unidade"
+															name="produto.unidade">
+															<option></option>
+														</select>
+													</div>
 										<div class="form-group col-sm-4">
 											<label for="produto.valor" class="control-label">Valor
 												R$:</label> <input type="text" class="form-control"
