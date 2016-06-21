@@ -7,9 +7,9 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.jelasticlw.sgmsystem.dao.ClienteDAO;
-import br.com.jelasticlw.sgmsystem.dao.UfDAO;
+import br.com.jelasticlw.sgmsystem.dao.UFDAO;
 import br.com.jelasticlw.sgmsystem.model.Cliente;
-import br.com.jelasticlw.sgmsystem.model.Uf;
+import br.com.jelasticlw.sgmsystem.model.UF;
 import br.com.jelasticlw.sgmsystem.model.Usuario;
 
 @Controller

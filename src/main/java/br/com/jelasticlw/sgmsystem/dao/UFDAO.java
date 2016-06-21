@@ -2,8 +2,9 @@ package br.com.jelasticlw.sgmsystem.dao;
 
 import javax.enterprise.context.RequestScoped;
 
-import br.com.jelasticlw.sgmsystem.model.Uf;
+import br.com.jelasticlw.sgmsystem.model.UF;
 
 @RequestScoped
-public class UfDAO extends HibernateDAO<Uf> {
+public class UFDAO extends HibernateDAO<UF> {
+	
 }

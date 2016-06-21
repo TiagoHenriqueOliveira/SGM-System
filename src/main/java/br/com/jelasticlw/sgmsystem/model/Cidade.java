@@ -29,5 +29,5 @@ public @Data class Cidade {
 	private Long codigo;
 	private String nome;
 	@ManyToOne
-	private Uf codigo_Uf;
+	private UF codigo_Uf;
 }
