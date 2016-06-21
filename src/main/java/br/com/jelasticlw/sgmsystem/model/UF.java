@@ -24,4 +24,7 @@ public @Data class UF implements Entidade {
 	@Column(nullable = false, length = 255)
 	private String nome;
 	
+	@Column(nullable = false, length = 2)
+	private String sigla;
+	
 }
