@@ -16,7 +16,7 @@
 			<div class="well col-xs-12">
 				<div class="col-xs-3 col-md-4">
 					<button type="button" class="btn btn-primary" data-toggle="modal"
-						data-target="#addProduto">
+						data-target="#addUnidade">
 						<span class="glyphicon glyphicon-plus"></span> Adicionar
 					</button>
 				</div>
@@ -34,7 +34,7 @@
 				</div>
 				<!-- /.col-lg-6 -->
 			</div>
-			<div class="modal fade " id="addProduto" tabindex="-1" role="dialog"
+			<div class="modal fade " id="addUnidade" tabindex="-1" role="dialog"
 				aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
@@ -87,10 +87,10 @@
 							<td>${unidade.abreviatura}</td>
 							<td>
 								<button type="button" class="btn btn-success btn-xs"
-									data-toggle="modal" data-target="#addProduto${unidade.codigo}">Editar</button>
+									data-toggle="modal" data-target="#addUnidade${unidade.codigo}">Editar</button>
 							</td>
 						</tr>
-						<div class="modal fade " id="addProduto${unidade.codigo}"
+						<div class="modal fade " id="addUnidade${unidade.codigo}"
 							tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
