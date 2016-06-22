@@ -23,7 +23,7 @@
 						href="<c:url value='/cliente'/>" class="list-group-item ">
 						Cliente <span class="glyphicon glyphicon-user rigth"
 						aria-hidden="true"></span>
-					</a> <a href="<c:url value='/produto'/>" class="list-group-item">
+					</a> <a href="<c:url value='/produtoCarrega'/>" class="list-group-item">
 						Produto <span class="glyphicon glyphicon-oil rigth"
 						aria-hidden="true"></span>
 					</a> <a href="<c:url value='/servico'/>" class="list-group-item">
