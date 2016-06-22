@@ -26,7 +26,7 @@
 					</a> <a href="<c:url value='/produtoCarrega'/>" class="list-group-item">
 						Produto <span class="glyphicon glyphicon-oil rigth"
 						aria-hidden="true"></span>
-					</a> <a href="<c:url value='/servico'/>" class="list-group-item">
+					</a> <a href="<c:url value='/servicoCarrega'/>" class="list-group-item">
 						Serviço <span class="glyphicon glyphicon-wrench rigth"
 						aria-hidden="true"></span>
 					</a> <a href="<c:url value='/usuarioCarrega'/>" class="list-group-item">
