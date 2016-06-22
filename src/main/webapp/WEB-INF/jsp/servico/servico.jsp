@@ -49,25 +49,18 @@
 						<div class="modal-body">
 							<div class=" row">
 
-								<form data-toggle="validator" role="form">
+								<form data-toggle="validator" role="form"
+									action="<c:url value='/servico'/>" method="post">
 									<div class="form-group col-sm-12">
 										<label for="inputName" class="control-label">Nome</label> <input
-											type="text" class="form-control" id="inputName" required>
+											type="text" class="form-control" id="inputName"
+											name="servico.nome" value="${servico.nome}" required>
 									</div>
 									<div class="form-group col-sm-4">
 										<label for="servico.valor" class="control-label">Valor
 											R$:</label> <input type="text" class="form-control"
-											id="servico.valor" name="servico.valor" required>
-									</div>
-									<div class="form-group col-sm-4">
-										<label for="servico.tipo" class="control-label">Tipo:</label>
-										<input type="text" class="form-control" id="servico.tipo"
-											name="servico.tipo" required>
-									</div>
-									<div class="checkbox col-sm-3 col-sm-offset-1 foraUso">
-										<label for="servico.fora" class=""><input
-											type="checkbox" value="" name="servico.fora">Fora de
-											uso</label>
+											id="servico.valor" name="servico.valor"
+											value="${servico.valor}" required>
 									</div>
 									<div class="modal-footer col-xs-12">
 										<button type="button" class="btn btn-danger"
@@ -86,19 +79,60 @@
 						<tr>
 							<th class="col-sm-4">Nome</th>
 							<th class="col-sm-4">Valor R$</th>
-							<th class="col-sm-3">Tipo</th>
 							<th class="col-sm-1">Ação</th>
 						</tr>
 					</thead>
-					<tr>
-						<td>Troca de óleo</td>
-						<td>100,00</td>
-						<td>Mão de obra</td>
-						<td>
-							<button type="button" class="btn btn-success btn-xs"
-								data-toggle="modal" data-target="#addServico">Editar</button>
-						</td>
-					</tr>
+					<c:forEach items="${servicoView}" var="servico">
+						<tr>
+							<td>${servico.nome}</td>
+							<td>${servico.valor}</td>
+							<td>
+								<button type="button" class="btn btn-success btn-xs"
+									data-toggle="modal" data-target="#addServico${servico.codigo}">Editar</button>
+							</td>
+						</tr>
+						<div class="modal fade " id="addServico${servico.codigo}"
+							tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+										<h4 class="modal-title" id="myModalLabel">Serviço</h4>
+									</div>
+									<div class="modal-body">
+										<div class=" row">
+
+											<form data-toggle="validator" role="form"
+												action="<c:url value='/servico'/>" method="post">
+												<input type="hidden" name="servico.codigo"
+													value="${servico.codigo}">
+												<div class="form-group col-sm-12">
+													<label for="inputName" class="control-label">Nome</label> <input
+														type="text" class="form-control" id="inputName"
+														name="servico.nome" value="${servico.nome}" required>
+												</div>
+												<div class="form-group col-sm-4">
+													<label for="servico.valor" class="control-label">Valor
+														R$:</label> <input type="text" class="form-control"
+														id="servico.valor" name="servico.valor"
+														value="${servico.valor}" required>
+												</div>
+												<div class="modal-footer col-xs-12">
+													<button type="button" class="btn btn-danger"
+														data-dismiss="modal">Cancelar</button>
+													<button type="submit" class="btn btn-success">Salvar</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</c:forEach>
 				</table>
 			</div>
 		</div>
