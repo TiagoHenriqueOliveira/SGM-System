@@ -1,8 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <%@include file="../cabecalho.jsp"%>
 
 <div class="container-fluid">
@@ -53,7 +48,7 @@
 								<li role="presentation" class="active"><a href="#home"
 									aria-controls="home" role="tab" data-toggle="tab">Cliente</a></li>
 								<li role="presentation"><a href="#profile"
-									aria-controls="profile" role="tab" data-toggle="tab">VeÃ­culo</a></li>
+									aria-controls="profile" role="tab" data-toggle="tab">Veículo</a></li>
 							</ul>
 
 							<!-- Tab panes -->
@@ -89,8 +84,8 @@
 													<label for="cliente.cidade" class="control-label">Cidade:</label>
 													<select class="form-control col-sm-2" id="cliente.cidade"
 														name="cliente.cidade">
-														<option>XanxerÃª</option>
-														<option>"chapecÃ³"</option>
+														<option>Xanxerê</option>
+														<option>"chapecó"</option>
 														<option>"Guarapuava"</option>
 													</select>
 												</div>
@@ -100,7 +95,7 @@
 														name="cliente.bairro" value="${cliente.bairro}" required>
 												</div>
 												<div class="form-group col-sm-6">
-													<label for="cliente.endereco" class="control-label">EndereÃ§o:</label>
+													<label for="cliente.endereco" class="control-label">Endereço:</label>
 													<input type="text" class="form-control"
 														id="cliente.endereco" name="cliente.endereco"
 														value="${cliente.Endereco}" required>
@@ -163,7 +158,7 @@
 															<tr>
 																<th class="col-sm-4">Nome</th>
 																<th class="col-sm-4">Placa</th>
-																<th class="col-sm-1">AÃ§Ã£o</th>
+																<th class="col-sm-1">Ação</th>
 															</tr>
 														</thead>
 														<tr>
@@ -195,7 +190,7 @@
 							<th class="col-sm-4">Nome</th>
 							<th class="col-sm-4">Telefone</th>
 							<th class="col-sm-3">CPF</th>
-							<th class="col-sm-1">AÃ§Ã£o</th>
+							<th class="col-sm-1">Ação</th>
 						</tr>
 					</thead>
 					<c:forEach items="${clienteview}" var="cliente">

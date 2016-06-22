@@ -1,8 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <%@include file="../cabecalho.jsp"%>
 
 <div class="container-fluid">
@@ -39,7 +34,7 @@
 									</div>
 								</div>
 								<div class="form-group col-sm-6">
-									<label for="osv.servico" class="control-label">ServiÃ§o:</label>
+									<label for="osv.servico" class="control-label">Serviço:</label>
 									<div class="input-group">
 										<input type="text" class="form-control" id="osv.servico"
 											name="osv.servico" required> <span
@@ -51,7 +46,7 @@
 									</div>
 								</div>
 								<div class="form-group col-sm-6">
-									<label for="osv.veiculo" class="control-label">VeÃ­culo:</label>
+									<label for="osv.veiculo" class="control-label">Veículo:</label>
 									<div class="input-group">
 										<input type="text" class="form-control" id="osv.veiculo"
 											name="osv.veiculo" required> <span
@@ -67,7 +62,7 @@
 										class="form-control col-sm-2" id="osv.status"
 										name="osv.status">
 										<option>Aberta</option>
-										<option>ConcluÃ­da</option>
+										<option>Concluída</option>
 										<option>Cancelada</option>
 									</select>
 								</div>
@@ -136,11 +131,11 @@
 												<th class="col-sm-5">Produto</th>
 												<th class="col-xs-1 col-sm-2">Quant.</th>
 												<th class="col-sm-2">Valor total</th>
-												<th class="col-sm-1">AÃ§Ã£o</th>
+												<th class="col-sm-1">Ação</th>
 											</tr>
 										</thead>
 										<tr>
-											<td>Ã“leo</td>
+											<td>Óleo</td>
 											<td>2</td>
 											<td>60,00</td>
 											<td>
@@ -150,7 +145,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td>Ã“leo</td>
+											<td>Óleo</td>
 											<td>2</td>
 											<td>60,00</td>
 											<td>
@@ -160,7 +155,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td>Ã“leo</td>
+											<td>Óleo</td>
 											<td>2</td>
 											<td>60,00</td>
 											<td>
@@ -170,7 +165,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td>Ã“leo</td>
+											<td>Óleo</td>
 											<td>2</td>
 											<td>60,00</td>
 											<td>

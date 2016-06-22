@@ -1,8 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <%@include file="../cabecalho.jsp"%>
 
 <div class="container-fluid">
@@ -15,7 +10,7 @@
 					<select class="form-control" id="os.status" name="os.status">
 						<option>Todas</option>
 						<option>Abertas</option>
-						<option>ConcluÃ­das</option>
+						<option>Concluídas</option>
 						<option>Canceladas</option>
 					</select>
 				</div>
@@ -39,12 +34,12 @@
 						<tr>
 							<th class="col-sm-1">Cod</th>
 							<th class="col-sm-3">Cliente</th>
-							<th class="col-sm-2">VeÃ­culo</th>
+							<th class="col-sm-2">Veículo</th>
 							<th class="col-sm-2">Placa</th>
-							<th class="col-sm-1">ServiÃ§o</th>
+							<th class="col-sm-1">Serviço</th>
 							<th class="col-sm-1">Produto</th>
 							<th class="col-sm-1">Valor total</th>
-							<th class="col-sm-1">AÃ§Ã£o</th>
+							<th class="col-sm-1">Ação</th>
 						</tr>
 					</thead>
 					<tr>
@@ -52,8 +47,8 @@
 						<td>Joao da Silva</td>
 						<td>Honda Civic</td>
 						<td>AAA-0099</td>
-						<td>Troca de Ã³leo</td>
-						<td>Ã“leo</td>
+						<td>Troca de óleo</td>
+						<td>Óleo</td>
 						<td>100,0</td>
 						<td>
 							<button type="button" class="btn btn-success btn-xs"

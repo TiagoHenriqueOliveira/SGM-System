@@ -1,8 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <%@include file="../cabecalho.jsp"%>
 
 <div class="container-fluid">
@@ -11,7 +6,7 @@
 
 		<div class="col-sm-9">
 			<div class="col-xs-12">
-				<h2>ServiÃ§o</h2>
+				<h2>Serviço</h2>
 			</div>
 			<div class="well col-xs-12">
 				<div class="col-xs-3 col-md-4">
@@ -44,7 +39,7 @@
 								aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-							<h4 class="modal-title" id="myModalLabel">ServiÃ§o</h4>
+							<h4 class="modal-title" id="myModalLabel">Serviço</h4>
 						</div>
 						<div class="modal-body">
 							<div class=" row">
@@ -79,7 +74,7 @@
 						<tr>
 							<th class="col-sm-4">Nome</th>
 							<th class="col-sm-4">Valor R$</th>
-							<th class="col-sm-1">AÃ§Ã£o</th>
+							<th class="col-sm-1">Ação</th>
 						</tr>
 					</thead>
 					<c:forEach items="${servicoView}" var="servico">
@@ -101,7 +96,7 @@
 											aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
-										<h4 class="modal-title" id="myModalLabel">ServiÃ§o</h4>
+										<h4 class="modal-title" id="myModalLabel">Serviço</h4>
 									</div>
 									<div class="modal-body">
 										<div class=" row">
