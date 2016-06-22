@@ -89,7 +89,6 @@
 								<button type="button" class="btn btn-success btn-xs"
 									data-toggle="modal" data-target="#addProduto${unidade.codigo}">Editar</button>
 							</td>
-							</td>
 						</tr>
 						<div class="modal fade " id="addProduto${unidade.codigo}"
 							tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
