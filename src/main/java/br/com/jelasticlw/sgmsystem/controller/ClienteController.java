@@ -46,7 +46,6 @@ public class ClienteController {
 				// TODO: handle exception
 			}
 		}
-		result.include("clienteView", clienteDao.listarTodos(Cliente.class));
-		result.include("cidadeView", cidadeDao.listarTodos(Cidade.class));
+		result.redirectTo(ClienteController.class).cliente();
 	}
 }
