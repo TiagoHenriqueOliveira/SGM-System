@@ -17,37 +17,31 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="TB_CLIENTE")
+@Table(name = "TB_CLIENTE")
 public @Data class Cliente implements Entidade {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-	
+
 	@Column(nullable = false, length = 255)
 	private String nome;
 	
-	@Column(nullable = false, length = 11, unique = true)
+	@Column(nullable = false, length = 11)
 	private String cpf;
-	
+
+	@Column(nullable = false, length = 12)
+	private String telefone;
+
 	@Column(nullable = false, length = 255)
 	private String rua;
-	
+
 	@Column(nullable = false, length = 255)
 	private String bairro;
-	
-	@Column(nullable = false)
+
+	@Column(nullable = false, length = 10)
 	private Integer numero;
-	
-	@Column(length = 10)
-	private String telCelular;
-	
-	@Column(length = 10)
-	private String telResidencial;
-	
-	@Column(nullable = false, length = 255, unique = true)
-	private String email;
-	
+
 	@ManyToOne(optional = true, fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_cidade")
 	private Cidade cidade;
