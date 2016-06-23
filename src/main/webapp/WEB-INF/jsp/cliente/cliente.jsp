@@ -57,12 +57,14 @@
 											name="cliente.telefone" value="${cliente.telefone}" required>
 									</div>
 									<div class="form-group col-sm-2">
-										<label for="cliente_uf" class="control-label">Uf:</label> <select
+										<label for="cliente_uf" class="control-label">UF:</label> <select
 											class="form-control col-sm-2" id="cliente_uf"
-											name="cliente.uf.codigo">
-											<%-- 														<c:forEach items="${ufView}" var="uf"> --%>
-											<%-- 															<option value="${uf.codigo}">${uf.sigla}</option> --%>
-											<%-- 														</c:forEach> --%>
+											name="cliente.cidade.uf.codigo">
+											<c:forEach items="${ufView}" var="uf">
+												<option value="${uf.codigo}">
+													${uf.sigla}
+												</option>
+											</c:forEach>
 										</select>
 									</div>
 									<div class="form-group col-sm-4">
@@ -70,7 +72,9 @@
 										<select class="form-control col-sm-2" id="cliente.cidade"
 											name="cliente.cidade.codigo">
 											<c:forEach items="${cidadeView}" var="cidade">
-												<option value="${cidade.codigo}">${cidade.nome}</option>
+												<option value="${cidade.codigo}">
+													${cidade.nome}
+												</option>
 											</c:forEach>
 										</select>
 									</div>
@@ -161,12 +165,14 @@
 														value="${cliente.telefone}" required>
 												</div>
 												<div class="form-group col-sm-2">
-													<label for="cliente_uf" class="control-label">Uf:</label> <select
+													<label for="cliente_uf" class="control-label">UF:</label> <select
 														class="form-control col-sm-2" id="cliente_uf"
-														name="cliente.uf.codigo">
-														<%-- 														<c:forEach items="${ufView}" var="uf"> --%>
-														<%-- 															<option value="${uf.codigo}">${uf.sigla}</option> --%>
-														<%-- 														</c:forEach> --%>
+														name="cliente.cidade.uf.codigo">
+														<c:forEach items="${ufView}" var="uf">
+															<option value="${uf.codigo}">
+																${uf.sigla}
+															</option>
+														</c:forEach>
 													</select>
 												</div>
 												<div class="form-group col-sm-4">
@@ -174,7 +180,9 @@
 													<select class="form-control col-sm-2" id="cliente.cidade"
 														name="cliente.cidade.codigo">
 														<c:forEach items="${cidadeView}" var="cidade">
-															<option value="${cidade.codigo}">${cidade.nome}</option>
+															<option value="${cidade.codigo}">
+																${cidade.nome}
+															</option>
 														</c:forEach>
 													</select>
 												</div>
