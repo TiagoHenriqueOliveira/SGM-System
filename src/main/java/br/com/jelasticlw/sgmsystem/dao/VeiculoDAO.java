@@ -2,7 +2,6 @@ package br.com.jelasticlw.sgmsystem.dao;
 
 import javax.enterprise.context.RequestScoped;
 
-import br.com.jelasticlw.sgmsystem.model.Cliente;
 import br.com.jelasticlw.sgmsystem.model.Veiculo;
 
 @RequestScoped
