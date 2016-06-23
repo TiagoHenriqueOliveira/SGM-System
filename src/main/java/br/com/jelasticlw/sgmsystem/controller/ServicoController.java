@@ -41,6 +41,6 @@ public class ServicoController {
 				// TODO: handle exception
 			}
 		}
-		result.redirectTo(ServicoController.class).servico();
+		result.include("servicoView", servicoDao.listarTodos(Servico.class));
 	}
 }
