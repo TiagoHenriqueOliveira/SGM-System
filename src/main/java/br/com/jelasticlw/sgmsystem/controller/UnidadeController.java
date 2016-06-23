@@ -41,6 +41,6 @@ public class UnidadeController {
 				// TODO: handle exception
 			}
 		}
-		result.include("unidadeView", unidadeDao.listarTodos(Unidade.class));
+		result.redirectTo(UnidadeController.class).unidade();
 	}
 }
