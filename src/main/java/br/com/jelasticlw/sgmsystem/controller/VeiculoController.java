@@ -6,7 +6,9 @@ import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import br.com.jelasticlw.sgmsystem.dao.ClienteDAO;
 import br.com.jelasticlw.sgmsystem.dao.VeiculoDAO;
+import br.com.jelasticlw.sgmsystem.model.Cliente;
 import br.com.jelasticlw.sgmsystem.model.Veiculo;
 
 @Controller
@@ -17,6 +19,11 @@ public class VeiculoController {
 
 	@Inject
 	private VeiculoDAO veiculoDao;
+	
+	@Inject
+	private ClienteDAO clienteDao;
+	
+	private Cliente cliente = new Cliente();
 
 	protected VeiculoController() {
 		this(null);
@@ -27,8 +34,10 @@ public class VeiculoController {
 		this.result = result;
 	}
 
-	@Get("/veiculoCarrega")
-	public void veiculo() {
+	@Get("/veiculoCarrega/{codigo}")
+	public void veiculo(Long codigo) {
+		this.cliente = clienteDao.buscarPorCodigo(Cliente.class, codigo);
+		result.include("cliente", this.cliente);
 		result.include("veiculoView", veiculoDao.listarTodos(Veiculo.class));
 	}
 
@@ -40,15 +49,15 @@ public class VeiculoController {
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
-			result.redirectTo(VeiculoController.class).veiculo();
+			result.include("veiculoView", veiculoDao.listarTodos(Veiculo.class));
 		}
 	}
 
 	@Get("/excluir/{codigo}")
 	public void excluir(Long codigo) {
-		Veiculo vei = veiculoDao.buscarPorCodigo(Veiculo.class, codigo);
+		Veiculo veiculo = veiculoDao.buscarPorCodigo(Veiculo.class, codigo);
 		try {
-			veiculoDao.excluir(vei);
+			veiculoDao.excluir(veiculo);
 		} catch (Exception e) {
 
 		}
