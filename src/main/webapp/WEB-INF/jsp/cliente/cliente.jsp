@@ -126,12 +126,12 @@
 							<td>
 								<button type="button" class="btn btn-success btn-xs"
 									data-toggle="modal" data-target="#addCliente${cliente.codigo }"">Editar</button>
-								<button type="button" class="btn btn-info btn-xs"
-									data-toggle="modal" data-target="#addVeiculo${cliente.codigo }"">Veículo</button>
+								<a href="<c:url value='/veiculoCarrega'/>"><input
+									type="submit" class="btn btn-default btn-xs" value="Veículo"></a>
 							</td>
 						</tr>
-						<div class="modal fade " id="addCliente${cliente.codigo }"
-							tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						<div class="modal fade " id="addCliente" tabindex="-1"
+							role="dialog" aria-labelledby="myModalLabel">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 
@@ -204,49 +204,6 @@
 													<button type="button" class="btn btn-danger"
 														data-dismiss="modal">Cancelar</button>
 													<button type="submit" class="btn btn-success">Salvar</button>
-												</div>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="modal fade " id="addVeiculo${cliente.codigo }"
-							tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-							<div class="modal-dialog" role="document">
-								<div class="modal-content">
-
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal"
-											aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-										<h4 class="modal-title" id="myModalLabel">Veículo</h4>
-									</div>
-									<div class="modal-body">
-										<div class=" row">
-
-											<form data-toggle="validator" role="form"
-												action="<c:url value='/veiculo'/>" method="post">
-												<input type="hidden" name="cliente.codigo"
-													value="${cliente.codigo}">
-												<div class="form-group col-sm-6">
-													<label for="inputName" class="control-label">Name</label> <input
-														type="text" class="form-control" id="inputName"
-														name="veiculo.nome" value="${veiculo.nome}" required>
-												</div>
-												<div class="form-group col-sm-6">
-													<label for="veiculo_placa" class="control-label">Placa:</label>
-													<input type="text" class="form-control"
-														id="veiculo_placa" name="veiculo.placa"
-														value="${veiculo.placa}" required>
-												</div>
-												<div class="modal-footer col-xs-12">
-													<button type="button" class="btn btn-danger"
-														data-dismiss="modal">Cancelar</button>
-													<button type="submit" class="btn btn-success">Salvar</button>
-													
 												</div>
 											</form>
 										</div>
