@@ -1,4 +1,46 @@
-<%@include file="../cabecalho.jsp"%>
+<?xml version="1.0" encoding="UTF-8" ?>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="UTF-8" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
+<title>SGM-System</title>
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/estilo.css" rel="stylesheet" />
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">SGM-System</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Nome</a></li>
+					<li><a href="#">Sair <span class="glyphicon glyphicon-off"
+							aria-hidden="true"></span>
+					</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+
 
 <div class="container-fluid">
 	<div class="row">
@@ -6,7 +48,7 @@
 
 		<div class="col-sm-9">
 			<div class="col-xs-12">
-				<h2 class="navbar-brand">Veículo</h2>
+				<h2 class="navbar-brand">VeÃ­culo</h2>
 			</div>
 			<div class="well col-xs-12">
 				<div class="col-xs-3 col-md-4">
@@ -39,7 +81,7 @@
 								aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-							<h4 class="modal-title" id="myModalLabel">Veículo</h4>
+							<h4 class="modal-title" id="myModalLabel">VeÃ­culo</h4>
 						</div>
 						<div class="modal-body">
 							<div class=" row">
@@ -73,9 +115,9 @@
 					<thead>
 						<tr>
 							<th class="col-sm-4">Cliente</th>
-							<th class="col-sm-4">Veículo</th>
+							<th class="col-sm-4">VeÃ­culo</th>
 							<th class="col-sm-3">Placa</th>
-							<th class="col-sm-1">Ação</th>
+							<th class="col-sm-1">AÃ§Ã£o</th>
 						</tr>
 					</thead>
 					<c:forEach items="${veiculoView}" var="veiculo">
@@ -95,4 +137,10 @@
 		</div>
 	</div>
 </div>
-<%@include file="../rodape.jsp"%>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.js"></script>
+<script src="../js/bootstrap-datepicker.js"></script>
+<script src="../js/bootstrap-timepicker.js"></script>
+<script src="../js/cadastro.js"></script>
+</body>
+</html>
