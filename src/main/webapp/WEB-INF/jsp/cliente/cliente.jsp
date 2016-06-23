@@ -246,6 +246,7 @@
 													<button type="button" class="btn btn-danger"
 														data-dismiss="modal">Cancelar</button>
 													<button type="submit" class="btn btn-success">Salvar</button>
+													
 												</div>
 											</form>
 										</div>

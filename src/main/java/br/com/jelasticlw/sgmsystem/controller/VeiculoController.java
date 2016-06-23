@@ -3,9 +3,11 @@ package br.com.jelasticlw.sgmsystem.controller;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.jelasticlw.sgmsystem.dao.VeiculoDAO;
+import br.com.jelasticlw.sgmsystem.model.Unidade;
 import br.com.jelasticlw.sgmsystem.model.Veiculo;
 
 @Controller
@@ -25,6 +27,11 @@ public class VeiculoController {
 	public VeiculoController(Result result) {
 		this.result = result;
 	}
+	@Get("/veiculoCarrega")
+	public void veiculo(){
+		result.include("veiculoView", veiculoDao.listarTodos(Veiculo.class));
+	}
+	
 	@Post("/veiculo")
 	public void veiculo(Veiculo veiculo) {
 		if (veiculo != null) {
@@ -33,7 +40,16 @@ public class VeiculoController {
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
+			result.include("veiculoView", veiculoDao.listarTodos(Veiculo.class));
 		}
-		result.include("variable", "");
+	}
+	@Get("/excluir/{codigo}")
+	public void excluir(Long codigo) {
+		Veiculo vei = veiculoDao.buscarPorCodigo(Veiculo.class, codigo);
+		try {
+			veiculoDao.excluir(vei);
+		} catch (Exception e) {
+			
+		}
 	}
 }
