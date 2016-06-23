@@ -41,64 +41,152 @@
 							</button>
 							<h4 class="modal-title" id="myModalLabel">Cliente</h4>
 						</div>
-						<div>
+						<div class="modal-body">
+							<div class=" row">
 
-							<!-- Nav tabs -->
-							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation" class="active"><a href="#home"
-									aria-controls="home" role="tab" data-toggle="tab">Cliente</a></li>
-								<li role="presentation"><a href="#profile"
-									aria-controls="profile" role="tab" data-toggle="tab">Veículo</a></li>
-							</ul>
+								<form data-toggle="validator" role="form"
+									action="<c:url value='/cliente'/>" method="post">
+									<div class="form-group col-sm-12">
+										<label for="inputName" class="control-label">Name</label> <input
+											type="text" class="form-control" id="inputName"
+											name="cliente.nome" value="${cliente.nome}" required>
+									</div>
+									<div class="form-group col-sm-6">
+										<label for="cliente_telefone" class="control-label">Telefone:</label>
+										<input type="text" class="form-control" id="cliente_telefone"
+											name="cliente.telefone" value="${cliente.telefone}" required>
+									</div>
+									<div class="form-group col-sm-2">
+										<label for="cliente_uf" class="control-label">Uf:</label> <select
+											class="form-control col-sm-2" id="cliente_uf"
+											name="cliente.uf.codigo">
+											<%-- 														<c:forEach items="${ufView}" var="uf"> --%>
+											<%-- 															<option value="${uf.codigo}">${uf.sigla}</option> --%>
+											<%-- 														</c:forEach> --%>
+										</select>
+									</div>
+									<div class="form-group col-sm-4">
+										<label for="cliente.cidade" class="control-label">Cidade:</label>
+										<select class="form-control col-sm-2" id="cliente.cidade"
+											name="cliente.cidade.codigo">
+											<c:forEach items="${cidadeView}" var="cidade">
+												<option value="${cidade.codigo}">${cidade.nome}</option>
+											</c:forEach>
+										</select>
+									</div>
+									<div class="form-group col-sm-6">
+										<label for="cliente.rua" class="control-label">Rua:</label> <input
+											type="text" class="form-control" id="cliente.rua"
+											name="cliente.rua" value="${cliente.rua}" required>
+									</div>
+									<div class="form-group col-sm-6">
+										<label for="cliente.bairro" class="control-label">Bairro:</label>
+										<input type="text" class="form-control" id="cliente.bairro"
+											name="cliente.bairro" value="${cliente.bairro}" required>
+									</div>
+									<div class="form-group col-sm-4">
+										<label for="cliente.numero" class="control-label">Numero:</label>
+										<input type="text" class="form-control"
+											data-mask="999-99-999-9999-9" id="cliente.numero"
+											name="cliente.numero" value="${cliente.numero}" required>
+									</div>
+									<div class="form-group col-sm-4">
+										<label for="cliente.cpf" class="control-label">CPF:</label> <input
+											type="text" class="form-control" id="cliente.cpf"
+											name="cliente.cpf" value="${cliente.cpf}" required>
+									</div>
 
-							<!-- Tab panes -->
-							<div class="tab-content">
-								<div role="tabpanel" class="tab-pane active" id="home">
+									<div class="modal-footer col-xs-12">
+										<button type="button" class="btn btn-danger"
+											data-dismiss="modal">Cancelar</button>
+										<button type="submit" class="btn btn-success">Salvar</button>
+									</div>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tabela">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th class="col-sm-4">Nome</th>
+							<th class="col-sm-4">Telefone</th>
+							<th class="col-sm-2">CPF</th>
+							<th class="col-sm-2" align="center">Ação</th>
+						</tr>
+					</thead>
+					<c:forEach items="${clienteView}" var="cliente">
+						<tr>
+							<td align="center">${cliente.nome}</td>
+							<td>${cliente.telefone}</td>
+							<td>${cliente.cpf}</td>
+							<td>
+								<button type="button" class="btn btn-success btn-xs"
+									data-toggle="modal" data-target="#addCliente${cliente.codigo }"">Editar</button>
+								<button type="button" class="btn btn-info btn-xs"
+									data-toggle="modal" data-target="#addVeiculo${cliente.codigo }"">Veículo</button>
+							</td>
+						</tr>
+						<div class="modal fade " id="addCliente${cliente.codigo }"
+							tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+										<h4 class="modal-title" id="myModalLabel">Cliente</h4>
+									</div>
 									<div class="modal-body">
 										<div class=" row">
 
-											<form data-toggle="validator" role="form">
+											<form data-toggle="validator" role="form"
+												action="<c:url value='/cliente'/>" method="post">
+												<input type="hidden" name="cliente.codigo"
+													value="${cliente.codigo}">
 												<div class="form-group col-sm-12">
 													<label for="inputName" class="control-label">Name</label> <input
 														type="text" class="form-control" id="inputName"
-														value="${cliente.nome}" required>
+														name="cliente.nome" value="${cliente.nome}" required>
 												</div>
 												<div class="form-group col-sm-6">
-													<label for="cliente.fone" class="control-label">Telefone:</label>
-													<input type="text" class="form-control" id="cliente.fone"
-														name="cliente.fone" value="${cliente.fone}" required>
+													<label for="cliente_telefone" class="control-label">Telefone:</label>
+													<input type="text" class="form-control"
+														id="cliente_telefone" name="cliente.telefone"
+														value="${cliente.telefone}" required>
 												</div>
 												<div class="form-group col-sm-2">
-													<label for="cliente.uf" class="control-label">Uf:</label> <select
-														class="form-control col-sm-2" id="cliente.uf"
-														name="cliente.uf">
-														<option>"SC"</option>
-														<option>"PR"</option>
-
-														<%-- 															<c:forEach items="${ufview}" var="uf"> --%>
-														<%-- 																<option>${uf.nome}</option> --%>
-														<%-- 															</c:forEach> --%>
+													<label for="cliente_uf" class="control-label">Uf:</label> <select
+														class="form-control col-sm-2" id="cliente_uf"
+														name="cliente.uf.codigo">
+														<%-- 														<c:forEach items="${ufView}" var="uf"> --%>
+														<%-- 															<option value="${uf.codigo}">${uf.sigla}</option> --%>
+														<%-- 														</c:forEach> --%>
 													</select>
 												</div>
 												<div class="form-group col-sm-4">
 													<label for="cliente.cidade" class="control-label">Cidade:</label>
 													<select class="form-control col-sm-2" id="cliente.cidade"
-														name="cliente.cidade">
-														<option>Xanxerê</option>
-														<option>"chapecó"</option>
-														<option>"Guarapuava"</option>
+														name="cliente.cidade.codigo">
+														<c:forEach items="${cidadeView}" var="cidade">
+															<option value="${cidade.codigo}">${cidade.nome}</option>
+														</c:forEach>
 													</select>
+												</div>
+												<div class="form-group col-sm-6">
+													<label for="cliente.rua" class="control-label">Rua:</label>
+													<input type="text" class="form-control" id="cliente.rua"
+														name="cliente.rua" value="${cliente.rua}" required>
 												</div>
 												<div class="form-group col-sm-6">
 													<label for="cliente.bairro" class="control-label">Bairro:</label>
 													<input type="text" class="form-control" id="cliente.bairro"
 														name="cliente.bairro" value="${cliente.bairro}" required>
-												</div>
-												<div class="form-group col-sm-6">
-													<label for="cliente.endereco" class="control-label">Endereço:</label>
-													<input type="text" class="form-control"
-														id="cliente.endereco" name="cliente.endereco"
-														value="${cliente.Endereco}" required>
 												</div>
 												<div class="form-group col-sm-4">
 													<label for="cliente.numero" class="control-label">Numero:</label>
@@ -111,98 +199,60 @@
 													<input type="text" class="form-control" id="cliente.cpf"
 														name="cliente.cpf" value="${cliente.cpf}" required>
 												</div>
-												<div class="checkbox col-sm-3 col-sm-offset-1 foraUso">
-													<label for="cliente.fora" class=""><input
-														type="checkbox" value="" name="cliente.fora">Fora
-														de uso</label>
-												</div>
-												<div class="modal-footer col-xs-12">
-													<button type="button" class="btn btn-danger"
-														data-dismiss="modal">Cancelar</button>
-													<button type="submit" class="btn btn-success">
-														Salvar</button>
-												</div>
-											</form>
-										</div>
-									</div>
-								</div>
-								<div role="tabpanel" class="tab-pane" id="profile">
-									<div class="modal-body">
-										<div class=" row">
 
-											<form data-toggle="validator" role="form">
-												<div class="form-group col-lg-5">
-													<label for="inputName" class="control-label">Nome</label> <input
-														type="text" class="form-control" id="inputName" required>
-												</div>
-												<div class="form-group col-sm-5">
-													<label for="veiculo.placa" class="control-label">Placa:</label>
-													<input type="text" class="form-control" id="veiculo.placa"
-														name="veiculo.placa" required>
-												</div>
-												<div class="checkbox col-sm-3 col-sm-offset-1 foraUso">
-													<label for="veiculo.fora" class=""> <input
-														type="checkbox" value="" name="veiculo.fora"> Fora
-														de uso
-													</label>
-												</div>
 												<div class="modal-footer col-xs-12">
 													<button type="button" class="btn btn-danger"
 														data-dismiss="modal">Cancelar</button>
-													<button type="submit" class="btn btn-success">
-														Salvar</button>
-												</div>
-												<div class="tabela">
-													<table class="table table-bordered">
-														<thead>
-															<tr>
-																<th class="col-sm-4">Nome</th>
-																<th class="col-sm-4">Placa</th>
-																<th class="col-sm-1">Ação</th>
-															</tr>
-														</thead>
-														<tr>
-															<td>Honda Civic</td>
-															<td>AAA-0099</td>
-															<td>
-																<button type="button" class="btn btn-danger btn-xs"
-																	data-toggle="modal"">Excluir</button>
-															</td>
-															</td>
-														</tr>
-													</table>
+													<button type="submit" class="btn btn-success">Salvar</button>
 												</div>
 											</form>
 										</div>
 									</div>
 								</div>
 							</div>
-
 						</div>
 
-					</div>
-				</div>
-			</div>
-			<div class="tabela">
-				<table class="table table-bordered">
-					<thead>
-						<tr>
-							<th class="col-sm-4">Nome</th>
-							<th class="col-sm-4">Telefone</th>
-							<th class="col-sm-3">CPF</th>
-							<th class="col-sm-1">Ação</th>
-						</tr>
-					</thead>
-					<c:forEach items="${clienteview}" var="cliente">
-						<tr>
-							<td>${cliente.nome}</td>
-							<td>${cliente.fone}</td>
-							<td>${cliente.cpf}</td>
-							<td>
-								<button type="button" class="btn btn-success btn-xs"
-									data-toggle="modal" data-target="#addUsuario"">Editar</button>
-							</td>
-						</tr>
+						<div class="modal fade " id="addVeiculo${cliente.codigo }"
+							tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+										<h4 class="modal-title" id="myModalLabel">Veículo</h4>
+									</div>
+									<div class="modal-body">
+										<div class=" row">
+
+											<form data-toggle="validator" role="form"
+												action="<c:url value='/veiculo'/>" method="post">
+												<input type="hidden" name="veiculo.codigo"
+													value="${veiculo.codigo}">
+												<div class="form-group col-sm-6">
+													<label for="inputName" class="control-label">Name</label> <input
+														type="text" class="form-control" id="inputName"
+														name="veiculo.nome" value="${veiculo.nome}" required>
+												</div>
+												<div class="form-group col-sm-6">
+													<label for="veiculo_telefone" class="control-label">Placa:</label>
+													<input type="text" class="form-control"
+														id="veiculo_telefone" name="veiculo.telefone"
+														value="${veiculo.telefone}" required>
+												</div>
+												<div class="modal-footer col-xs-12">
+													<button type="button" class="btn btn-danger"
+														data-dismiss="modal">Cancelar</button>
+													<button type="submit" class="btn btn-success">Salvar</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</c:forEach>
 				</table>
 			</div>
