@@ -9,7 +9,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<link rel="icon" href="../../favicon.ico">
-		<title>SGM-System | Cadastro</title>
+		<title>SGM-System</title>
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/estilo.css" rel="stylesheet" />
 	</head>
