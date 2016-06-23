@@ -41,6 +41,6 @@ public class UsuarioController {
 				// TODO: handle exception
 			}
 		}
-		result.include("usuarioview", usuarioDao.listarTodos(Usuario.class));
+		result.redirectTo(UsuarioController.class).usuario();
 	}
 }
