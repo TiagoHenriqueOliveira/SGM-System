@@ -41,8 +41,8 @@
 	
 				<div class="list-group">
 					<li class="list-group-item active">Ordem de serviço</li>
-					<a href="<c:url value='/osvNovo'/>" class="list-group-item">Nova OSV</a>
-					<a href="<c:url value='/ordemServico'/>" class="list-group-item">Listar OSV</a>
+					<a href="<c:url value='/osv'/>" class="list-group-item">Nova OSV</a>
+					<a href="<c:url value='/listaOsv'/>" class="list-group-item">Listar OSV</a>
 				</div>
 			</div>
 		</div>

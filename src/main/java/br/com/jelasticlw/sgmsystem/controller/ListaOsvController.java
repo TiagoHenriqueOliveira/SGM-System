@@ -7,22 +7,22 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 
 @Controller
-public class OSVNovoController {
+public class ListaOsvController {
 
 	@Inject
 	private Result result;
 
-	protected OSVNovoController() {
+	protected ListaOsvController() {
 		this(null);
 	}
 
 	@Inject
-	public OSVNovoController(Result result) {
+	public ListaOsvController(Result result) {
 		this.result = result;
 	}
 	
-	@Path("/osvNovo")
-	public void osvNovo() {
+	@Path("/listaOsv")
+	public void listaOsv() {
 		result.include("variable", "");
 	}
 }
