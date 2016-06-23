@@ -3,26 +3,26 @@ package br.com.jelasticlw.sgmsystem.controller;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Get;
+import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 
 @Controller
-public class PrincipalController {
+public class SistemaController {
 
 	@Inject
 	private Result result;
 
-	protected PrincipalController() {
+	protected SistemaController() {
 		this(null);
 	}
 
 	@Inject
-	public PrincipalController(Result result) {
+	public SistemaController(Result result) {
 		this.result = result;
 	}
 
-	@Get("/sistema")
-	public void principal() {
-		result.redirectTo("/sistema");
+	@Path("/sistema")
+	public void sistema() {
+		result.include("variable", "");
 	}
 }
