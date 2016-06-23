@@ -3,10 +3,9 @@ package br.com.jelasticlw.sgmsystem.controller;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
-import br.com.caelum.vraptor.validator.Validator;
 import br.com.jelasticlw.sgmsystem.dao.UsuarioDAO;
 import br.com.jelasticlw.sgmsystem.model.Usuario;
 
@@ -15,9 +14,6 @@ public class LoginController {
 
 	@Inject
 	private Result result;
-	
-	@Inject
-	private Validator validator;
 
 	@Inject
 	private UsuarioDAO usuarioDao;
@@ -33,22 +29,22 @@ public class LoginController {
 		this.result = result;
 	}
 	
-	@Path("/login")
+	@Get("/login")
 	public void login() {
-		result.include("variable", "");
+		result.include("", "");
 	}
 
-//	@Post("/sistema")
-//	public void acessar(String login, String senha) {
-//		this.usuario = usuarioDao.login(login, senha);
-//		try {
-//			if((this.usuario != null) && (this.usuario.getLogin().equals(login)) && (this.usuario.getSenha().equals(senha))) {
-//				result.include("variable", "");
-//			} else {
-//				result.redirectTo(LoginController.class).acessar(null, null);;
-//			}
-//		} catch (Exception e) {
-//			
-//		}
-//	}
+	@Post("/sistema")
+	public void login(Usuario usuario) {
+		this.usuario = usuarioDao.login(usuario);
+		try {
+			if(this.usuario != null) {
+				result.forwardTo(SistemaController.class).sistema();
+			} else {
+				result.forwardTo(LoginController.class).login();
+			}
+		} catch (Exception e) {
+			result.forwardTo(LoginController.class).login();
+		}
+	}
 }
