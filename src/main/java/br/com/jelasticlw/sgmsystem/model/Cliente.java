@@ -27,10 +27,10 @@ public @Data class Cliente implements Entidade {
 	@Column(nullable = false, length = 255)
 	private String nome;
 	
-	@Column(nullable = false, length = 11)
+	@Column(nullable = false, length = 14)
 	private String cpf;
 
-	@Column(nullable = false, length = 12)
+	@Column(nullable = false, length = 14)
 	private String telefone;
 
 	@Column(nullable = false, length = 255)
