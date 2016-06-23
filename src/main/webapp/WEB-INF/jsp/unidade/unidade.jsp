@@ -68,12 +68,13 @@
 					</div>
 				</div>
 			</div>
-			<div class="tabela">
+			<div class="tabela col-sm-9">
 				<table class="table table-bordered">
 					<thead>
 						<tr>
 							<th class="col-sm-4">Nome</th>
-							<th class="col-sm-4">Sigla</th>
+							<th class="col-sm-2">Sigla</th>
+							<th class="col-sm-2">Ação</th>
 						</tr>
 					</thead>
 					<c:forEach items="${unidadeView}" var="unidade">

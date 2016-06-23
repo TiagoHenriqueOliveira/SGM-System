@@ -229,18 +229,18 @@
 
 											<form data-toggle="validator" role="form"
 												action="<c:url value='/veiculo'/>" method="post">
-												<input type="hidden" name="veiculo.codigo"
-													value="${veiculo.codigo}">
+												<input type="hidden" name="cliente.codigo"
+													value="${cliente.codigo}">
 												<div class="form-group col-sm-6">
 													<label for="inputName" class="control-label">Name</label> <input
 														type="text" class="form-control" id="inputName"
 														name="veiculo.nome" value="${veiculo.nome}" required>
 												</div>
 												<div class="form-group col-sm-6">
-													<label for="veiculo_telefone" class="control-label">Placa:</label>
+													<label for="veiculo_placa" class="control-label">Placa:</label>
 													<input type="text" class="form-control"
-														id="veiculo_telefone" name="veiculo.telefone"
-														value="${veiculo.telefone}" required>
+														id="veiculo_placa" name="veiculo.placa"
+														value="${veiculo.placa}" required>
 												</div>
 												<div class="modal-footer col-xs-12">
 													<button type="button" class="btn btn-danger"

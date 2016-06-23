@@ -20,7 +20,7 @@
 	
 				<div class="list-group">
 					<li class="list-group-item active">Cadastro</li> <a
-						href="<c:url value='/cliente'/>" class="list-group-item ">
+						href="<c:url value='/clienteCarrega'/>" class="list-group-item ">
 						Cliente <span class="glyphicon glyphicon-user rigth"
 						aria-hidden="true"></span>
 					</a> <a href="<c:url value='/produtoCarrega'/>" class="list-group-item">

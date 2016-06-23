@@ -26,7 +26,6 @@ public class ClienteController {
 	protected ClienteController() {
 		this(null);
 	}
-
 	@Inject
 	public ClienteController(Result result) {
 		this.result = result;
