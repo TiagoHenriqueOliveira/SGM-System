@@ -21,10 +21,6 @@ section h2 {
     padding: 20px;
 }
 
-input {
-	text-transform: uppercase;
-}
-
 .imagem-agenda, .imagem-cadastro, .imagem-dispositivo, .imagem-estoque {
     margin: 0px;
     padding: 30px 0px !important;
