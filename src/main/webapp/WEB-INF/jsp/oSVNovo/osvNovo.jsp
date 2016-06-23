@@ -27,9 +27,15 @@
 										<input type="text" class="form-control" id="osv.cliente"
 											name="osv.cliente" required> <span
 											class="input-group-btn">
-											<button class="btn btn-default" type="button">
+											
+										<!-- implementar botão com input para buscar a lista de cliente -->
+											
+											<button class="btn btn-default" type="button"
+												data-toggle="modal" data-target="#listaCliente">
 												<span class="glyphicon glyphicon-search"></span>
 											</button>
+											
+											
 										</span>
 									</div>
 								</div>
@@ -39,9 +45,15 @@
 										<input type="text" class="form-control" id="osv.servico"
 											name="osv.servico" required> <span
 											class="input-group-btn">
-											<button class="btn btn-default" type="button">
+											
+					<!-- implementar botão com input para buscar a lista de servico -->
+					
+											<button class="btn btn-default" type="button"
+												data-toggle="modal" data-target="#listaServico">
 												<span class="glyphicon glyphicon-search"></span>
 											</button>
+											
+											
 										</span>
 									</div>
 								</div>
@@ -51,9 +63,15 @@
 										<input type="text" class="form-control" id="osv.veiculo"
 											name="osv.veiculo" required> <span
 											class="input-group-btn">
-											<button class="btn btn-default" type="button">
+											
+											<!-- implementar botão com input para buscar a lista de veiculo -->
+											
+											<button class="btn btn-default" type="button"
+												data-toggle="modal" data-target="#listaVeiculo">
 												<span class="glyphicon glyphicon-search"></span>
 											</button>
+											
+											
 										</span>
 									</div>
 								</div>
@@ -96,7 +114,8 @@
 										<input type="text" class="form-control" id="osv.produto"
 											name="osv.produto" required> <span
 											class="input-group-btn">
-											<button class="btn btn-default" type="button">
+											<button class="btn btn-default" type="button"
+												data-toggle="modal" data-target="#listaProduto">
 												<span class="glyphicon glyphicon-search"></span>
 											</button>
 										</span>
@@ -179,8 +198,150 @@
 								</div>
 
 							</form>
+
 						</div>
-						<div role="tabpanel" class="tab-pane" id="messages"></div>
+						<div class="modal fade " id="listaCliente" tabindex="-1"
+							role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+										<h4 class="modal-title" id="myModalLabel">Clientes</h4>
+									</div>
+									<div class="modal-body">
+
+
+										<div class="tabela">
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th class="col-sm-4">Nome</th>
+														<th class="col-sm-4">Telefone</th>
+														<th class="col-sm-2">CPF</th>
+														<th class="col-sm-2" align="center">Ação</th>
+													</tr>
+												</thead>
+												<c:forEach items="${clienteView}" var="cliente">
+													<tr>
+														<td align="center">${cliente.nome}</td>
+														<td>${cliente.telefone}</td>
+														<td>${cliente.cpf}</td>
+														<td><a href="<c:url value='/veiculoCarrega'/>"><input
+																type="submit" class="btn btn-default btn-xs"
+																value="Veículo"></a></td>
+													</tr>
+												</c:forEach>
+											</table>
+										</div>
+
+									</div>
+									<div class="modal-footer col-xs-12">
+										<button type="button" class="btn btn-danger"
+											data-dismiss="modal">Fechar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="modal fade " id="listaVeiculo" tabindex="-1"
+							role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+										<h4 class="modal-title" id="myModalLabel">Veiculo</h4>
+									</div>
+									<div class="modal-body">
+
+
+										<div class="tabela">
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th class="col-sm-4">Nome</th>
+														<th class="col-sm-4">Telefone</th>
+														<th class="col-sm-2">CPF</th>
+														<th class="col-sm-2" align="center">Ação</th>
+													</tr>
+												</thead>
+												<c:forEach items="${clienteView}" var="cliente">
+													<tr>
+														<td align="center">${cliente.nome}</td>
+														<td>${cliente.telefone}</td>
+														<td>${cliente.cpf}</td>
+														<td><a href="<c:url value='/veiculoCarrega'/>"><input
+																type="submit" class="btn btn-default btn-xs"
+																value="Veículo"></a></td>
+													</tr>
+												</c:forEach>
+											</table>
+										</div>
+
+									</div>
+									<div class="modal-footer col-xs-12">
+										<button type="button" class="btn btn-danger"
+											data-dismiss="modal">Fechar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="modal fade " id="listaServico" tabindex="-1"
+							role="dialog" aria-labelledby="myModalLabel">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+										<h4 class="modal-title" id="myModalLabel">Servico</h4>
+									</div>
+									<div class="modal-body">
+
+
+										<div class="tabela">
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th class="col-sm-4">Nome</th>
+														<th class="col-sm-4">Telefone</th>
+														<th class="col-sm-2">CPF</th>
+														<th class="col-sm-2" align="center">Ação</th>
+													</tr>
+												</thead>
+												<c:forEach items="${clienteView}" var="cliente">
+													<tr>
+														<td align="center">${cliente.nome}</td>
+														<td>${cliente.telefone}</td>
+														<td>${cliente.cpf}</td>
+														<td><a href="<c:url value='/veiculoCarrega'/>"><input
+																type="submit" class="btn btn-default btn-xs"
+																value="Veículo"></a></td>
+													</tr>
+												</c:forEach>
+											</table>
+										</div>
+
+									</div>
+									<div class="modal-footer col-xs-12">
+										<button type="button" class="btn btn-danger"
+											data-dismiss="modal">Fechar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						
 					</div>
 				</div>
 			</div>
