@@ -47,6 +47,6 @@ public class ProdutoController {
 				// TODO: handle exception
 			}
 		}
-		result.include("produtoView", produtoDao.listarTodos(Produto.class));
+		result.redirectTo(ProdutoController.class).produto();
 	}
 }

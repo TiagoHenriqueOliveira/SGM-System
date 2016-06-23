@@ -21,8 +21,8 @@ public class SistemaController {
 		this.result = result;
 	}
 
-	@Path("/sistema")
+	@Path("/principal")
 	public void sistema() {
-		result.include("variable", "");
+		result.include("", "");
 	}
 }
