@@ -129,9 +129,10 @@
 							<td>${cliente.cpf}</td>
 							<td>
 								<button type="button" class="btn btn-success btn-xs"
-									data-toggle="modal" data-target="#addCliente${cliente.codigo }"">Editar</button>
-								<a href="<c:url value='/veiculoCarrega'/>"><input
-									type="submit" class="btn btn-default btn-xs" value="Veículo"></a>
+									data-toggle="modal" data-target="#addCliente${cliente.codigo}"">Editar</button>
+								<a href="<c:url value='/veiculoCarrega/${cliente.codigo}'/>">
+									<input type="submit" class="btn btn-default btn-xs" value="Veículo">
+								</a>
 							</td>
 						</tr>
 						<div class="modal fade " id="addCliente" tabindex="-1"
