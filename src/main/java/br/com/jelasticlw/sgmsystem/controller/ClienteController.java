@@ -8,8 +8,10 @@ import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.jelasticlw.sgmsystem.dao.CidadeDAO;
 import br.com.jelasticlw.sgmsystem.dao.ClienteDAO;
+import br.com.jelasticlw.sgmsystem.dao.UFDAO;
 import br.com.jelasticlw.sgmsystem.model.Cidade;
 import br.com.jelasticlw.sgmsystem.model.Cliente;
+import br.com.jelasticlw.sgmsystem.model.UF;
 
 @Controller
 public class ClienteController {
@@ -22,7 +24,10 @@ public class ClienteController {
 
 	@Inject
 	private CidadeDAO cidadeDao;
-
+	
+	@Inject
+	private UFDAO ufDao;
+	
 	protected ClienteController() {
 		this(null);
 	}
@@ -34,6 +39,7 @@ public class ClienteController {
 	@Get("/clienteCarrega")
 	public void cliente() {
 		result.include("clienteView", clienteDao.listarTodos(Cliente.class));
+		result.include("ufView", ufDao.listarTodos(UF.class));
 		result.include("cidadeView", cidadeDao.listarTodos(Cidade.class));
 	}
 
