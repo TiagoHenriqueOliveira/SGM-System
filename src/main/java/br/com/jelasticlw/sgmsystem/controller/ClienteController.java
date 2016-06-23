@@ -3,23 +3,25 @@ package br.com.jelasticlw.sgmsystem.controller;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import br.com.jelasticlw.sgmsystem.dao.CidadeDAO;
 import br.com.jelasticlw.sgmsystem.dao.ClienteDAO;
-import br.com.jelasticlw.sgmsystem.dao.UFDAO;
+import br.com.jelasticlw.sgmsystem.model.Cidade;
 import br.com.jelasticlw.sgmsystem.model.Cliente;
-import br.com.jelasticlw.sgmsystem.model.UF;
-import br.com.jelasticlw.sgmsystem.model.Usuario;
 
 @Controller
 public class ClienteController {
 
 	@Inject
 	private Result result;
-	
-//	@Inject
-//	private ClienteDAO clienteDao;
+
+	@Inject
+	private ClienteDAO clienteDao;
+
+	@Inject
+	private CidadeDAO cidadeDao;
 
 	protected ClienteController() {
 		this(null);
@@ -29,23 +31,23 @@ public class ClienteController {
 	public ClienteController(Result result) {
 		this.result = result;
 	}
-	
-	@Path("/cliente")
-	public void cliente(Cliente cliente) {
-//		if(cliente != null){
-//			try {
-//				clienteDao.salvar(cliente);
-//			} catch (Exception e) {
-//				// TODO: handle exception
-//			}
-//		}
-//		result.include("clienteview", clienteDao.listarTodos(Cliente.class));
-		result.include("variable","");
+
+	@Get("/clienteCarrega")
+	public void cliente() {
+		result.include("clienteView", clienteDao.listarTodos(Cliente.class));
+		result.include("cidadeView", cidadeDao.listarTodos(Cidade.class));
 	}
-	
-//	public void adicionar(Uf uf){
-//		result.include("ufview",ufDao.listarTodos(Uf.class));
-//	}
-	
-	
+
+	@Post("/cliente")
+	public void cliente(Cliente cliente) {
+		if (cliente != null) {
+			try {
+				clienteDao.salvar(cliente);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		result.include("clienteView", clienteDao.listarTodos(Cliente.class));
+		result.include("cidadeView", cidadeDao.listarTodos(Cidade.class));
+	}
 }
