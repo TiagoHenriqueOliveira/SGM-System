@@ -38,7 +38,7 @@ public class VeiculoController {
 	public void veiculo(Long codigo) {
 		this.cliente = clienteDao.buscarPorCodigo(Cliente.class, codigo);
 		result.include("cliente", this.cliente);
-		result.include("veiculoView", veiculoDao.listarTodos(Veiculo.class));
+		result.include("veiculoView", veiculoDao.listaVeiculosCliente(Veiculo.class, codigo));
 	}
 
 	@Post("/veiculo")
